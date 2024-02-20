@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Link</title>
+
+    <link rel="stylesheet" href="/src/styles/css/index.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container container">
+                <div class="header__logo logo-pic">
+                    <img src="./src/assets/img/learnlinklogo.svg" alt="Logo" class="logo-pic__img">
+                    <h1 class="logo-pic__title">Learn Link</h1>
+                </div>
+                <nav class="header__nav">
+                    <div class="header__buttons">
+                        <button class="button-white-tp">Войти</button>
+                        <button class="button-white-tp">Регистрация</button>
+                    </div>
+                    <!-- <div class="header__dropdown dropdown">
+                        <div class="dropdown__head">
+                            valorex <span class="icon icon-arrow-down"></span>
+                        </div>
+                        <div class="dropdown__items">
+                            <div class="dropdown__item">
+                                <span class="icon icon-user"></span> Профиль
+                            </div>
+                            <div class="dropdown__item">
+                                <span class="icon icon-star"></span> Мои курсы
+                            </div>
+                            <div class="dropdown__item">
+                                <span class="icon icon-power"></span> Выйти
+                            </div>
+                        </div>
+                    </div> -->
+                </nav>
+            </div>
+        </header>
+
+        <main class="main container">
+            <h3 class="main__title">Общедоступные курсы</h3>
+            <section class="courses">
+                <form action="#" class="courses__search-form search-form">
+                    <input type="text" class="search-form__input"
+                        placeholder="Найти по названию курса или категории...">
+                </form>
+
+                <form action="#" class="courses__pagination-form pagination-form">
+                    <button class="pagination-form__start-button icon-arrow-left-dotted"></button>
+                    <button class="pagination-form__prev-button icon-arrow-left"></button>
+                    <div class="pagination-form__pages-view">
+                        <input type="number" class="pagination-form__pages-input" min="1" value="1">
+                        <p class="pagination-form__pages-count">из 20</p>
+                    </div>
+                    <button class="pagination-form__next-button icon-arrow-right"></button>
+                    <button class="pagination-form__end-button icon-arrow-right-dotted"></button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="footer">
+            Footer
+        </footer>
+    </div>
+</body>
+
+</html>

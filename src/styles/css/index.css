@@ -1,0 +1,579 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  font-size: 16px;
+  color: #000;
+  font-family: "Golos Text";
+}
+
+* {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../assets/fonts/golos-text-v4-cyrillic_latin-regular.woff2") format("woff2"), url("../../assets/fonts/golos-text-v4-cyrillic_latin-regular.woff") format("woff");
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* golos-text-500 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../assets/fonts/golos-text-v4-cyrillic_latin-500.woff2") format("woff2"), url("../../assets/fonts/golos-text-v4-cyrillic_latin-500.woff") format("woff");
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* golos-text-600 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../../assets/fonts/golos-text-v4-cyrillic_latin-600.woff2") format("woff2"), url("../../assets/fonts/golos-text-v4-cyrillic_latin-600.woff") format("woff");
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* golos-text-700 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../assets/fonts/golos-text-v4-cyrillic_latin-700.woff2") format("woff2"), url("../../assets/fonts/golos-text-v4-cyrillic_latin-700.woff") format("woff");
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* golos-text-800 - cyrillic_latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Golos Text";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../../assets/fonts/golos-text-v4-cyrillic_latin-800.woff2") format("woff2"), url("../../assets/fonts/golos-text-v4-cyrillic_latin-800.woff") format("woff");
+  /* Chrome 5+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: "learnlinkico";
+  src: url("../../assets/fonts/learnlinkico.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+[class^=icon-],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "learnlinkico" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-down:before {
+  content: "\e900";
+}
+
+.icon-arrow-left:before {
+  content: "\e901";
+}
+
+.icon-arrow-left-dotted:before {
+  content: "\e902";
+}
+
+.icon-arrow-right:before {
+  content: "\e903";
+}
+
+.icon-arrow-right-dotted:before {
+  content: "\e904";
+}
+
+.icon-arrow-up:before {
+  content: "\e905";
+}
+
+.icon-beaker:before {
+  content: "\e906";
+}
+
+.icon-bolt:before {
+  content: "\e907";
+}
+
+.icon-book:before {
+  content: "\e908";
+}
+
+.icon-chat:before {
+  content: "\e909";
+}
+
+.icon-check:before {
+  content: "\e90a";
+}
+
+.icon-code-add:before {
+  content: "\e90b";
+}
+
+.icon-cross:before {
+  content: "\e90c";
+}
+
+.icon-cross-circle:before {
+  content: "\e90d";
+}
+
+.icon-document-add:before {
+  content: "\e90e";
+}
+
+.icon-ellipsis:before {
+  content: "\e90f";
+}
+
+.icon-file:before {
+  content: "\e910";
+}
+
+.icon-invisible:before {
+  content: "\e911";
+}
+
+.icon-invisible-circle:before {
+  content: "\e912";
+}
+
+.icon-minus:before {
+  content: "\e913";
+}
+
+.icon-module:before {
+  content: "\e914";
+}
+
+.icon-pen:before {
+  content: "\e915";
+}
+
+.icon-pen-circle:before {
+  content: "\e916";
+}
+
+.icon-plus:before {
+  content: "\e917";
+}
+
+.icon-plus-circle:before {
+  content: "\e918";
+}
+
+.icon-power:before {
+  content: "\e919";
+}
+
+.icon-star:before {
+  content: "\e91a";
+}
+
+.icon-text-add:before {
+  content: "\e91b";
+}
+
+.icon-user:before {
+  content: "\e91c";
+}
+
+.icon-user-group:before {
+  content: "\e91d";
+}
+
+.icon-user-group-circle:before {
+  content: "\e91e";
+}
+
+.icon-user-lock:before {
+  content: "\e91f";
+}
+
+.icon-visible:before {
+  content: "\e920";
+}
+
+* {
+  font-size: 16px;
+  color: #505050;
+}
+
+body {
+  background-color: #fff;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+input[type=text],
+input[type=password],
+input[type=number],
+textarea {
+  padding: 0;
+  margin: 0;
+  min-height: 30px;
+  border-radius: 5px;
+  background: #F3F3F3;
+  border: none;
+  outline: none;
+  color: #505050;
+  font-size: 20px;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.container {
+  box-sizing: border-box;
+  padding: 0 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+}
+
+.button-base, .button-white-tp {
+  height: 50px;
+  border-radius: 5px;
+  background-color: #fff;
+  font-weight: 500;
+}
+
+.button-white-tp {
+  box-sizing: content-box;
+  padding: 0 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+.button-white-tp:hover {
+  background-color: #fff;
+  color: #505050;
+}
+
+.header {
+  background: linear-gradient(132.61deg, rgb(162, 105, 255) 0.048%, rgb(255, 173, 126) 100%);
+  box-sizing: content-box;
+  min-height: 120px;
+}
+.header__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__buttons {
+  display: flex;
+  gap: 20px;
+}
+.header__dropdown .dropdown__head {
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: 0.3s ease-in-out;
+}
+.header__dropdown .dropdown__head, .header__dropdown .dropdown__head > * {
+  color: #fff;
+}
+.header__dropdown .dropdown__head:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+@media screen and (max-width: 375px) {
+  .header__nav {
+    width: 100%;
+  }
+  .header__container {
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .header__logo {
+    margin-bottom: 40px;
+  }
+  .header__buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+.logo-pic {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.logo-pic__img {
+  min-width: 60px;
+  min-height: 60px;
+  width: 60px;
+  height: 60px;
+}
+.logo-pic__title {
+  color: white;
+}
+@media (max-width: 576px) {
+  .logo-pic__title {
+    display: none;
+  }
+}
+
+.dropdown {
+  cursor: pointer;
+  position: relative;
+}
+.dropdown__items {
+  position: absolute;
+  top: calc(100% + 20px);
+  right: 0;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 37px 0px rgba(0, 0, 0, 0.21);
+}
+.dropdown__items > *:first-child {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.dropdown__items > *:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.dropdown__item {
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+}
+.dropdown__item .icon {
+  margin-right: 20px;
+  font-size: calc(1em + 4px);
+}
+.dropdown__item:hover {
+  background: #F3F3F3;
+}
+@media screen and (max-width: 576px) {
+  .dropdown__item {
+    padding: 16px 24px;
+  }
+}
+
+.main {
+  width: 100%;
+}
+.main .main__title {
+  margin: 40px 0;
+}
+
+.search-form {
+  width: 100%;
+}
+.search-form__input {
+  height: 50px;
+  width: 100%;
+  padding: 0 10px !important;
+  font-weight: 500;
+}
+.search-form__input::-moz-placeholder {
+  color: #B8B8B8;
+}
+.search-form__input::placeholder {
+  color: #B8B8B8;
+}
