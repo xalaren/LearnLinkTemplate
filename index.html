@@ -24,7 +24,10 @@
                     </div>
                     <!-- <div class="header__dropdown dropdown">
                         <div class="dropdown__head">
-                            valorex <span class="icon icon-arrow-down"></span>
+                            <img class="dropdown__profile-image" src="./src/assets/img/profile_placeholder.svg"
+                                alt="Профиль">
+                            <p class="dropdown__profile-name">valorex</p>
+                            <p class="icon icon-arrow-down"></p>
                         </div>
                         <div class="dropdown__items">
                             <div class="dropdown__item">
@@ -42,29 +45,57 @@
             </div>
         </header>
 
-        <main class="main container">
+        <main class="main public-page container">
             <h3 class="main__title">Общедоступные курсы</h3>
-            <section class="courses">
-                <form action="#" class="courses__search-form search-form">
-                    <input type="text" class="search-form__input"
-                        placeholder="Найти по названию курса или категории...">
-                </form>
 
-                <form action="#" class="courses__pagination-form pagination-form">
-                    <button class="pagination-form__start-button icon-arrow-left-dotted"></button>
-                    <button class="pagination-form__prev-button icon-arrow-left"></button>
-                    <div class="pagination-form__pages-view">
-                        <input type="number" class="pagination-form__pages-input" min="1" value="1">
-                        <p class="pagination-form__pages-count">из 20</p>
+            <form action="#" class="public-page__search-form search-form">
+                <input type="text" class="search-form__input" placeholder="Найти по названию курса или категории...">
+            </form>
+
+            <form action="#" class="public-page__pagination-form pagination-form">
+                <button class="pagination-form__button button-violet-light icon-arrow-left-dotted"></button>
+                <button class="pagination-form__button button-violet-light button-violet-light-selected ">1</button>
+                <button class="pagination-form__button button-violet-light">2</button>
+                <button class="pagination-form__button button-violet-light">3</button>
+                <button class="pagination-form__button button-violet-light">...</button>
+                <button class="pagination-form__button button-violet-light icon-arrow-right-dotted"></button>
+            </form>
+
+            <section class="public-page__courses courses">
+
+                <div class="courses__course-item course-item">
+                    <div class="course-item__info">
+                        <div class="course-item__head">
+                            <p class="course-item__title">Test course</p>
+                            <div class="course-item__categories">
+                                <p>Категории: </p>
+                                <p class="linked-text">программирование </p>
+                                <p class="linked-text">математика </p>
+                                <p class="linked-text">алгоритмы </p>
+                            </div>
+                        </div>
+                        <div class="course-item__additional">
+                            <span class="course-item__icon icon-user"></span>
+                            10.000
+                        </div>
                     </div>
-                    <button class="pagination-form__next-button icon-arrow-right"></button>
-                    <button class="pagination-form__end-button icon-arrow-right-dotted"></button>
-                </form>
+                    <div class="course-item__properties">
+                        <span class="course-item__icon icon-invisible"></span>
+                        <span class="course-item__icon icon-user-lock"></span>
+                    </div>
             </section>
         </main>
 
         <footer class="footer">
-            Footer
+            <div class="footer__content container">
+                <p class="footer__title">
+                    Learn Link
+                </p>
+                <p class="footer__text">
+                    Платформа для разработки и публикации образовательных курсов <br />
+                    ©2023-2024
+                </p>
+            </div>
         </footer>
     </div>
 </body>

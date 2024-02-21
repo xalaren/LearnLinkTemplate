@@ -377,22 +377,18 @@ button {
   background: none;
   padding: 0;
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
 }
 
-input[type=text],
-input[type=password],
-input[type=number],
+input,
 textarea {
   padding: 0;
   margin: 0;
   min-height: 30px;
-  border-radius: 5px;
-  background: #F3F3F3;
   border: none;
   outline: none;
   color: #505050;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 h1 {
@@ -420,10 +416,10 @@ h3 {
 .wrapper {
   display: grid;
   grid-template-rows: auto 1fr auto;
-  height: 100%;
+  height: calc(100% + 150px);
 }
 
-.button-base, .button-white-tp {
+.button-base, .button-violet-light, .button-white-tp {
   height: 50px;
   border-radius: 5px;
   background-color: #fff;
@@ -431,8 +427,6 @@ h3 {
 }
 
 .button-white-tp {
-  box-sizing: content-box;
-  padding: 0 10px;
   background-color: rgba(255, 255, 255, 0.3);
   color: #fff;
   transition: 0.3s ease-in-out;
@@ -442,10 +436,39 @@ h3 {
   color: #505050;
 }
 
+.button-violet-light {
+  background-color: #f6f4ff;
+  color: #8C74FF;
+  transition: 0.4s ease-in-out;
+}
+.button-violet-light-selected, .button-violet-light:hover {
+  background-color: #8C74FF;
+  color: #fff;
+  box-shadow: 0px 0px 20px 0px rgba(140, 116, 255, 0.5);
+}
+.inputs-base, .search-form__input, .input-transparent {
+  border-radius: 5px;
+  background: #F3F3F3;
+  padding: 10px;
+}
+
+.input-transparent {
+  background-color: transparent;
+}
+
+.linked-text {
+  color: #8234ff;
+  cursor: pointer;
+}
+.linked-text:hover {
+  text-decoration: underline;
+}
+
 .header {
-  background: linear-gradient(132.61deg, rgb(162, 105, 255) 0.048%, rgb(255, 173, 126) 100%);
-  box-sizing: content-box;
-  min-height: 120px;
+  background: #8234ff;
+  box-sizing: border-box;
+  height: 120px;
+  transition: 0.3s ease-in-out;
 }
 .header__container {
   width: 100%;
@@ -458,7 +481,10 @@ h3 {
   display: flex;
   gap: 20px;
 }
-.header__dropdown .dropdown__head {
+.header__buttons button {
+  padding: 0 10px;
+}
+.header .dropdown__head {
   height: 50px;
   padding: 10px;
   display: flex;
@@ -467,13 +493,33 @@ h3 {
   gap: 10px;
   transition: 0.3s ease-in-out;
 }
-.header__dropdown .dropdown__head, .header__dropdown .dropdown__head > * {
+.header .dropdown__head .dropdown__profile-image {
+  min-width: 40px;
+  min-height: 40px;
+  width: 40px;
+  height: 40px;
+}
+.header .dropdown__head, .header .dropdown__head > * {
   color: #fff;
 }
-.header__dropdown .dropdown__head:hover {
+.header .dropdown__head:hover {
   background: rgba(255, 255, 255, 0.2);
 }
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 392px) {
+  .header .dropdown__head {
+    box-sizing: content-box;
+    padding: 15px;
+  }
+  .header .dropdown__items {
+    position: static;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 392px) {
+  .header {
+    height: -moz-max-content;
+    height: max-content;
+  }
   .header__nav {
     width: 100%;
   }
@@ -516,6 +562,9 @@ h3 {
 }
 
 .dropdown {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   cursor: pointer;
   position: relative;
 }
@@ -558,8 +607,12 @@ h3 {
 .main {
   width: 100%;
 }
-.main .main__title {
-  margin: 40px 0;
+
+.public-page .main__title {
+  margin-top: 40px;
+}
+.public-page > * {
+  margin-bottom: 40px;
 }
 
 .search-form {
@@ -570,10 +623,161 @@ h3 {
   width: 100%;
   padding: 0 10px !important;
   font-weight: 500;
+  text-overflow: ellipsis;
 }
 .search-form__input::-moz-placeholder {
   color: #B8B8B8;
 }
 .search-form__input::placeholder {
   color: #B8B8B8;
+}
+
+.pagination-form {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.pagination-form__pages-view {
+  display: flex;
+  align-items: center;
+}
+.pagination-form__button {
+  height: 50px;
+  width: 50px;
+  font-size: 24px;
+}
+.pagination-form__button-selected {
+  border: solid 3px #8C74FF;
+}
+@media screen and (max-width: 576px) {
+  .pagination-form {
+    gap: 10px;
+  }
+}
+@media screen and (max-width: 392px) {
+  .pagination-form {
+    gap: 8px;
+  }
+  .pagination-form__button {
+    height: 45px;
+    width: 45px;
+    font-size: 22px;
+    border-width: 2px;
+  }
+}
+
+.courses > *:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.course-item {
+  min-height: 150px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  border: solid 2px #F3F3F3;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.course-item__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+.course-item__head {
+  padding-bottom: 12px;
+}
+.course-item__head > *:not(:last-child) {
+  margin-bottom: 4px;
+}
+.course-item__title {
+  font-size: 22px;
+  font-weight: 500;
+}
+.course-item__categories {
+  font-weight: 500;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+.course-item__categories > * {
+  display: inline;
+  font-size: 12px;
+}
+.course-item__additional {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+}
+.course-item__properties {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.course-item__icon {
+  font-size: 24px;
+}
+.course-item * {
+  transition: inherit;
+}
+.course-item:hover {
+  border: solid 2px #8C74FF;
+  background-color: #f6f4ff;
+  box-shadow: 0px 0px 26px 0px rgba(140, 116, 255, 0.2);
+}
+.course-item:hover * {
+  color: #8C74FF;
+}
+@media screen and (max-width: 576px) {
+  .course-item__head {
+    padding-bottom: 20px;
+  }
+  .course-item__head > :first-child {
+    margin-bottom: 20px;
+  }
+  .course-item__categories > * {
+    display: block;
+  }
+}
+
+.footer {
+  width: 100%;
+  min-height: 160px;
+  background-color: #180034;
+  padding: 20px;
+}
+.footer__content {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__content > * {
+  color: #fff;
+}
+.footer__title {
+  font-size: 42px;
+  font-weight: 600;
+}
+.footer__text {
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: right;
+}
+@media screen and (max-width: 576px) {
+  .footer__content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  .footer__title {
+    font-size: 26px;
+  }
+  .footer__text {
+    text-align: center;
+    font-size: 12px;
+  }
 }
