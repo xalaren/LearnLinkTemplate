@@ -419,7 +419,7 @@ h3 {
   height: calc(100% + 150px);
 }
 
-.button-base, .button-violet-light, .button-white-tp {
+.button-base, .button-violet-light, .button-violet, .button-white-tp {
   height: 50px;
   border-radius: 5px;
   background-color: #fff;
@@ -436,6 +436,15 @@ h3 {
   color: #505050;
 }
 
+.button-violet {
+  background-color: #8C74FF;
+  color: #fff;
+  transition: 0.4s ease-in-out;
+}
+.button-violet:hover {
+  background-color: #8234ff;
+}
+
 .button-violet-light {
   background-color: #f6f4ff;
   color: #8C74FF;
@@ -446,7 +455,7 @@ h3 {
   color: #fff;
   box-shadow: 0px 0px 20px 0px rgba(140, 116, 255, 0.5);
 }
-.inputs-base, .search-form__input, .input-transparent {
+.inputs-base, .search-form__input, .input-danger, .input-gray, .input-transparent {
   border-radius: 5px;
   background: #F3F3F3;
   padding: 10px;
@@ -456,12 +465,46 @@ h3 {
   background-color: transparent;
 }
 
+.input-danger {
+  background-color: #fff;
+  color: #FF525C;
+  border: solid 2px #FF525C;
+  animation: shake 0.2s;
+}
+.input-danger::-moz-placeholder {
+  color: #FF525C;
+}
+.input-danger::placeholder {
+  color: #FF525C;
+}
+@keyframes shake {
+  0% {
+    transform: translateX(3px);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(-3px);
+  }
+}
+
 .linked-text {
   color: #8234ff;
   cursor: pointer;
 }
 .linked-text:hover {
   text-decoration: underline;
+}
+
+.required {
+  color: #FF525C;
+}
+.required:before {
+  content: "* ";
 }
 
 .header {
@@ -723,12 +766,7 @@ h3 {
 .course-item * {
   transition: inherit;
 }
-.course-item:hover {
-  border: solid 2px #8C74FF;
-  background-color: #f6f4ff;
-  box-shadow: 0px 0px 26px 0px rgba(140, 116, 255, 0.2);
-}
-.course-item:hover * {
+.course-item:hover .course-item__title {
   color: #8C74FF;
 }
 @media screen and (max-width: 576px) {
@@ -741,6 +779,45 @@ h3 {
   .course-item__categories > * {
     display: block;
   }
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.login-page__base-form {
+  width: 100%;
+}
+
+.base-form {
+  max-width: 600px;
+  padding: 40px 80px;
+  border: solid 2px #F3F3F3;
+}
+.base-form > *:not(:last-child) {
+  margin-bottom: 100px;
+}
+.base-form__form-input {
+  margin-bottom: 40px;
+}
+.base-form__form-input .form-input__input {
+  width: 100%;
+}
+.base-form__button {
+  width: 100%;
+  padding: 0 20px;
+}
+@media screen and (max-width: 576px) {
+  .base-form {
+    padding: 40px;
+  }
+}
+
+.form-input > *:not(:last-child) {
+  margin-bottom: 20px;
 }
 
 .footer {

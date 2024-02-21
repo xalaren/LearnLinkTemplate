@@ -25,6 +25,7 @@
     $lightViolet: #8C74FF;
     $veryLightViolet: #f6f4ff;
     $darkViolet: #180034;
+    $red: #FF525C;
 
     //Media breakpoints variables
 
@@ -117,6 +118,18 @@
         }
     }
 
+    .button-violet {
+        @extend .button-base;
+        background-color: $lightViolet;
+        color: $white;
+
+        transition: .4s ease-in-out;
+
+        &:hover {
+            background-color: $mainViolet;
+        }
+    }
+
     .button-violet-light {
         @extend .button-base;
         background-color: $veryLightViolet;
@@ -146,12 +159,57 @@
         background-color: transparent;
     }
 
+    .input-gray {
+        @extend .inputs-base;
+    }
+
+    .input-danger {
+        @extend.inputs-base;
+        $ml: 3px;
+        background-color: $white;
+        color: $red;
+        border: solid 2px $red;
+
+        animation: shake .2s;
+
+        &::placeholder {
+            color: $red;
+        }
+
+        @keyframes shake {
+            0% {
+                transform: translateX($ml);
+            }
+
+            25% {
+                transform: translateX($ml * (-1));
+            }
+
+            50% {
+                transform: translateX($ml);
+            }
+
+            100% {
+                transform: translateX($ml * (-1));
+            }
+        }
+
+    }
+
     .linked-text {
         color: $mainViolet;
         cursor: pointer;
 
         &:hover {
             text-decoration: underline;
+        }
+    }
+
+    .required {
+        color: $red;
+
+        &:before {
+            content: '* '
         }
     }
 
@@ -463,11 +521,10 @@
         }
 
         &:hover {
-            border: solid 2px $lightViolet;
-            background-color: $veryLightViolet;
-            box-shadow: 0px 0px 26px 0px rgba($lightViolet, 0.2);
+            // border: solid 2px $lightViolet;
+            // background-color: $veryLightViolet;
 
-            * {
+            .course-item__title {
                 color: $lightViolet;
             }
         }
@@ -489,7 +546,50 @@
         }
     }
 
+    .login-page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 100px;
+        padding-bottom: 100px;
 
+        &__base-form {
+            width: 100%;
+        }
+    }
+
+    .base-form {
+        max-width: 600px;
+        padding: 40px 80px;
+        border: solid 2px $veryLightGray;
+
+        >*:not(:last-child) {
+            margin-bottom: 100px;
+        }
+
+        &__form-input {
+            margin-bottom: 40px;
+
+            .form-input__input {
+                width: 100%;
+            }
+        }
+
+        &__button {
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        @media screen and (max-width: $sm) {
+            padding: 40px;
+        }
+    }
+
+    .form-input {
+        >*:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
 
 
 
@@ -539,5 +639,4 @@
                 font-size: $small-fz;
             }
         }
-
     }

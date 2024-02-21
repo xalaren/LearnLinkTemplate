@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Link</title>
+
+    <link rel="stylesheet" href="/src/styles/css/index.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container container">
+                <div class="header__logo logo-pic">
+                    <img src="../assets/img/learnlinklogo.svg" alt="Logo" class="logo-pic__img">
+                    <h1 class="logo-pic__title">Learn Link</h1>
+                </div>
+                <nav class="header__nav">
+                    <div class="header__buttons">
+                        <button class="button-white-tp">Войти</button>
+                        <button class="button-white-tp">Регистрация</button>
+                    </div>
+                    <!-- <div class="header__dropdown dropdown">
+                        <div class="dropdown__head">
+                            <img class="dropdown__profile-image" src="./src/assets/img/profile_placeholder.svg"
+                                alt="Профиль">
+                            <p class="dropdown__profile-name">valorex</p>
+                            <p class="icon icon-arrow-down"></p>
+                        </div>
+                        <div class="dropdown__items">
+                            <div class="dropdown__item">
+                                <span class="icon icon-user"></span> Профиль
+                            </div>
+                            <div class="dropdown__item">
+                                <span class="icon icon-star"></span> Мои курсы
+                            </div>
+                            <div class="dropdown__item">
+                                <span class="icon icon-power"></span> Выйти
+                            </div>
+                        </div>
+                    </div> -->
+                </nav>
+            </div>
+        </header>
+
+        <main class="main login-page container">
+            <form action="#" class="login-page__base-form base-form">
+                <h3 class="base-form__title">Вход в систему</h3>
+                <div class="base-form__inputs">
+                    <div class="base-form__form-input form-input">
+                        <p class="form-input__label">Никнейм</p>
+                        <input type="text" class="form-input__input input-gray" placeholder="Введите никнейм...">
+                    </div>
+                    <div class="base-form__form-input form-input">
+                        <p class="form-input__label">Пароль</p>
+                        <p class="form-input__error required">Пароль должен быть заполнен</p>
+                        <input type="text" class="form-input__input input-danger" placeholder="Введите пароль...">
+                    </div>
+                </div>
+                <button class="base-form__button button-violet">Войти</button>
+            </form>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__content container">
+                <p class="footer__title">
+                    Learn Link
+                </p>
+                <p class="footer__text">
+                    Платформа для разработки и публикации образовательных курсов <br />
+                    ©2023-2024
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
