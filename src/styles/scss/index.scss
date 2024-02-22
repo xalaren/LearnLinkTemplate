@@ -109,12 +109,20 @@
         @extend .button-base;
         background-color: rgba($white, 0.3);
         color: $white;
+        outline: solid 4px transparent;
 
         transition: .3s ease-in-out;
 
         &:hover {
             background-color: $white;
             color: $mainGray;
+            outline: solid 4px rgba($white, 0.3);
+        }
+
+        &:focus {
+            background-color: $white;
+            color: $mainGray;
+            outline: solid 4px rgba($white, 0.3);
         }
     }
 
@@ -122,11 +130,18 @@
         @extend .button-base;
         background-color: $lightViolet;
         color: $white;
+        outline: solid 4px transparent;
 
         transition: .4s ease-in-out;
 
         &:hover {
             background-color: $mainViolet;
+            outline: solid 4px rgba($lightViolet, 0.4);
+        }
+
+        &:focus {
+            background-color: $mainViolet;
+            outline: solid 4px rgba($lightViolet, 0.4);
         }
     }
 
@@ -546,7 +561,7 @@
         }
     }
 
-    .login-page {
+    .auth-page {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -567,6 +582,10 @@
             margin-bottom: 100px;
         }
 
+        &__title {
+            text-align: center;
+        }
+
         &__form-input {
             margin-bottom: 40px;
 
@@ -577,7 +596,7 @@
 
         &__button {
             width: 100%;
-            padding: 0 20px;
+            padding: 0 10px;
         }
 
         @media screen and (max-width: $sm) {
@@ -588,6 +607,21 @@
     .form-input {
         >*:not(:last-child) {
             margin-bottom: 20px;
+        }
+
+        &__error {
+            line-height: 1.5;
+            text-wrap: balance;
+        }
+    }
+
+    .image-uploader {
+        &__label {
+            cursor: pointer;
+        }
+
+        &__input {
+            display: none;
         }
     }
 

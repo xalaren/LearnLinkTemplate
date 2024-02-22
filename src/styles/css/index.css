@@ -429,20 +429,33 @@ h3 {
 .button-white-tp {
   background-color: rgba(255, 255, 255, 0.3);
   color: #fff;
+  outline: solid 4px transparent;
   transition: 0.3s ease-in-out;
 }
 .button-white-tp:hover {
   background-color: #fff;
   color: #505050;
+  outline: solid 4px rgba(255, 255, 255, 0.3);
+}
+.button-white-tp:focus {
+  background-color: #fff;
+  color: #505050;
+  outline: solid 4px rgba(255, 255, 255, 0.3);
 }
 
 .button-violet {
   background-color: #8C74FF;
   color: #fff;
+  outline: solid 4px transparent;
   transition: 0.4s ease-in-out;
 }
 .button-violet:hover {
   background-color: #8234ff;
+  outline: solid 4px rgba(140, 116, 255, 0.4);
+}
+.button-violet:focus {
+  background-color: #8234ff;
+  outline: solid 4px rgba(140, 116, 255, 0.4);
 }
 
 .button-violet-light {
@@ -781,14 +794,14 @@ h3 {
   }
 }
 
-.login-page {
+.auth-page {
   display: flex;
   justify-content: center;
   align-items: center;
   padding-top: 100px;
   padding-bottom: 100px;
 }
-.login-page__base-form {
+.auth-page__base-form {
   width: 100%;
 }
 
@@ -800,6 +813,9 @@ h3 {
 .base-form > *:not(:last-child) {
   margin-bottom: 100px;
 }
+.base-form__title {
+  text-align: center;
+}
 .base-form__form-input {
   margin-bottom: 40px;
 }
@@ -808,7 +824,7 @@ h3 {
 }
 .base-form__button {
   width: 100%;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 @media screen and (max-width: 576px) {
   .base-form {
@@ -818,6 +834,17 @@ h3 {
 
 .form-input > *:not(:last-child) {
   margin-bottom: 20px;
+}
+.form-input__error {
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+.image-uploader__label {
+  cursor: pointer;
+}
+.image-uploader__input {
+  display: none;
 }
 
 .footer {

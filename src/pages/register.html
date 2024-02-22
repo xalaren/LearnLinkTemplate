@@ -47,19 +47,37 @@
 
         <main class="main auth-page container">
             <form action="#" class="auth-page__base-form base-form">
-                <h3 class="base-form__title">Вход в систему</h3>
+                <h3 class="base-form__title">Регистрация</h3>
+
+                <div class="base-form__image-uploader image-uploader">
+                    <label for="image-upload" class="image-uploader__label">
+                        <img src="/src/assets/img/profile_add.svg" alt="Изображение профиля">
+                    </label>
+                    <input type="file" class="image-uploader__input" id="image-upload"
+                        accept="image/jpeg, image/png, image/jpg">
+                </div>
+
                 <div class="base-form__inputs">
+
                     <div class="base-form__form-input form-input">
                         <p class="form-input__label">Никнейм</p>
                         <input type="text" class="form-input__input input-gray" placeholder="Введите никнейм...">
                     </div>
                     <div class="base-form__form-input form-input">
                         <p class="form-input__label">Пароль</p>
-                        <p class="form-input__error required">Пароль должен быть заполнен</p>
-                        <input type="password" class="form-input__input input-danger" placeholder="Введите пароль...">
+                        <input type="password" class="form-input__input input-gray" placeholder="Введите пароль...">
                     </div>
+                    <div class="base-form__form-input form-input">
+                        <p class="form-input__label">Фамилия</p>
+                        <input type="text" class="form-input__input input-gray" placeholder="Введите фамилию...">
+                    </div>
+                    <div class="base-form__form-input form-input">
+                        <p class="form-input__label">Имя</p>
+                        <input type="text" class="form-input__input input-gray" placeholder="Введите имя...">
+                    </div>
+
                 </div>
-                <button class="base-form__button button-violet">Войти</button>
+                <button type="submit" class="base-form__button button-violet">Зарегистрироваться</button>
             </form>
         </main>
 
