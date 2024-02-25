@@ -24,12 +24,12 @@
                     </div> -->
                     <div class="header__dropdown dropdown">
                         <div class="dropdown__head">
-                            <img class="dropdown__profile-image" src="./src/assets/img/profile_placeholder.svg"
+                            <img class="dropdown__profile-image" src="../assets/img/profile_placeholder.svg"
                                 alt="Профиль">
                             <p class="dropdown__profile-name">valorex</p>
                             <p class="icon icon-arrow-down"></p>
                         </div>
-                        <div class="dropdown__items">
+                        <!-- <div class="dropdown__items">
                             <div class="dropdown__item">
                                 <span class="icon icon-user"></span> Профиль
                             </div>
@@ -39,28 +39,111 @@
                             <div class="dropdown__item">
                                 <span class="icon icon-power"></span> Выйти
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </nav>
             </div>
         </header>
 
-        <main class="main auth-page container">
-            <form action="#" class="auth-page__base-form base-form">
-                <h3 class="base-form__title">Вход в систему</h3>
-                <div class="base-form__inputs">
-                    <div class="base-form__form-input form-input">
-                        <p class="form-input__label">Никнейм</p>
-                        <input type="text" class="form-input__input input-gray" placeholder="Введите никнейм...">
-                    </div>
-                    <div class="base-form__form-input form-input">
-                        <p class="form-input__label">Пароль</p>
-                        <p class="form-input__error required">Пароль должен быть заполнен</p>
-                        <input type="password" class="form-input__input input-danger" placeholder="Введите пароль...">
-                    </div>
+        <main class="main account-page container">
+            <nav class="account-page__nav side-nav">
+                <div class="side-nav__profile">
+
                 </div>
-                <button class="base-form__button button-violet">Войти</button>
-            </form>
+                <div class="side-nav__nav-link nav-link nav-link-selected">
+                    <span class="nav-link__icon icon-user"></span>
+                    Основные данные
+                </div>
+                <div class="side-nav__nav-link nav-link">
+                    <span class="nav-link__icon icon-lock"></span>
+                    Изменить пароль
+                </div>
+                <div class="side-nav__nav-link nav-link">
+                    <span class="nav-link__icon icon-cross"></span>
+                    Удалить профиль
+                </div>
+            </nav>
+
+            <div class="account-page__content">
+                <h3 class="account-page__title">Основные данные</h3>
+
+                <form action="#" class="base-form account-change-form">
+
+                    <div class="base-form__profile profile-card">
+                        <div class="image-uploader profile-card__image">
+                            <label for="image-upload" class="image-uploader__label">
+                                <div class="image-reuploadable">
+                                    <img src="/src/assets/img/profile_placeholder.svg" alt="Изображение профиля">
+                                    <div class="image-reuploadable__icon icon-update"></div>
+                                </div>
+                            </label>
+                            <input type="file" class="image-uploader__input" id="image-upload"
+                                accept="image/jpeg, image/png, image/jpg">
+                        </div>
+                        <p class="profile-card__title">Name Lastname</p>
+                        <p class="profile-card__subtitle">@valorex (Администратор)</p>
+                    </div>
+
+                    <div class="base-form__inputs">
+
+                        <div class="base-form__form-input form-input">
+                            <p class="form-input__label">Никнейм</p>
+                            <input type="text" class="form-input__input input-gray" placeholder="Введите никнейм...">
+                        </div>
+                        <div class="base-form__form-input form-input">
+                            <p class="form-input__label">Фамилия</p>
+                            <input type="text" class="form-input__input input-gray" placeholder="Введите фамилию...">
+                        </div>
+                        <div class="base-form__form-input form-input">
+                            <p class="form-input__label">Имя</p>
+                            <input type="text" class="form-input__input input-gray" placeholder="Введите имя...">
+                        </div>
+
+                    </div>
+                    <nav class="base-form__nav">
+                        <button type="submit" class="base-form__button button-violet">Сохранить изменения</button>
+                    </nav>
+                </form>
+
+
+                <!-- <h3 class="account-page__title">Изменение пароля</h3>
+
+                <form action="#" class="base-form">
+
+                    <div class="base-form__inputs">
+
+                        <div class="base-form__form-input form-input">
+                            <p class="form-input__label">Старый пароль</p>
+                            <input type="text" class="form-input__input input-gray"
+                                placeholder="Введите старый пароль...">
+                        </div>
+                        <div class="base-form__form-input form-input">
+                            <p class="form-input__label">Новый пароль</p>
+                            <input type="text" class="form-input__input input-gray"
+                                placeholder="Введите новый пароль...">
+                        </div>
+
+                    </div>
+                    <nav class="base-form__nav">
+                        <button type="submit" class="base-form__button button-violet">Сохранить изменения</button>
+                    </nav>
+                </form> -->
+
+                <!-- <h3 class="account-page__title">Удаление профиля</h3>
+
+                <form action="#" class="account-remove-form">
+                    <div class="text-danger">
+                        Вы действительно хотите удалить профиль?
+                        <br />
+                        Все данные будут безвозвратно удалены!
+                    </div>
+
+                    <button class="button-danger">Удалить</button>
+                </form> -->
+
+
+
+            </div>
         </main>
 
         <footer class="footer">

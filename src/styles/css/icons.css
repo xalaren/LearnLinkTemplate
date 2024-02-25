@@ -19,6 +19,22 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-update:before {
+  content: "\e923";
+}
+
+.icon-burger:before {
+  content: "\e922";
+}
+
+.icon-lock:before {
+  content: "\e921";
+}
+
+.icon-document-add:before {
+  content: "\e90e";
+}
+
 .icon-arrow-down:before {
   content: "\e900";
 }
@@ -73,10 +89,6 @@
 
 .icon-cross-circle:before {
   content: "\e90d";
-}
-
-.icon-document-add:before {
-  content: "\e90e";
 }
 
 .icon-ellipsis:before {

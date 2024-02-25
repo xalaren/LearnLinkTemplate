@@ -26,6 +26,8 @@
     $veryLightViolet: #f6f4ff;
     $darkViolet: #180034;
     $red: #FF525C;
+    $darkerRed: #dd151f;
+    $lightRed: #FF7E7E;
 
     //Media breakpoints variables
 
@@ -103,6 +105,7 @@
         border-radius: 5px;
         background-color: $white;
         font-weight: 500;
+        padding: 10px;
     }
 
     .button-white-tp {
@@ -163,10 +166,30 @@
         }
     }
 
+    .button-danger {
+        @extend .button-base;
+        background-color: $lightRed;
+        color: $white;
+        outline: solid 4px transparent;
+
+        transition: .4s ease-in-out;
+
+        &:hover {
+            background-color: $red;
+            outline: solid 4px rgba($lightRed, 0.4);
+        }
+
+        &:focus {
+            background-color: $red;
+            outline: solid 4px rgba($lightRed, 0.4);
+        }
+    }
+
     .inputs-base {
         border-radius: 5px;
         background: $veryLightGray;
         padding: 10px;
+        min-height: 50px;
     }
 
     .input-transparent {
@@ -209,6 +232,18 @@
             }
         }
 
+    }
+
+    .ui-text {
+        color: $mainGray;
+        line-height: 1.5;
+        font-size: $reg-fz;
+        font-weight: 400;
+    }
+
+    .text-danger {
+        @extend .ui-text;
+        color: $red;
     }
 
     .linked-text {
@@ -399,15 +434,15 @@
 
     .main {
         width: 100%;
+
+        >* {
+            margin-bottom: 40px;
+        }
     }
 
     .public-page {
         .main__title {
             margin-top: 40px;
-        }
-
-        >* {
-            margin-bottom: 40px;
         }
     }
 
@@ -616,6 +651,8 @@
     }
 
     .image-uploader {
+        width: min-content;
+
         &__label {
             cursor: pointer;
         }
@@ -623,9 +660,175 @@
         &__input {
             display: none;
         }
+
+        .image-reuploadable {
+            position: relative;
+            width: min-content;
+
+            &__icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                font-size: 20px;
+                background-color: $veryLightGray;
+                color: $secondaryGray;
+            }
+        }
     }
 
+    .account-page {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 100px;
 
+        >* {
+            margin-top: 40px;
+        }
+
+        &__nav {
+            min-width: 300px;
+        }
+
+
+        &__content {
+
+            >*:first-child {
+                margin-bottom: 40px;
+            }
+
+            .base-form {
+                max-width: none;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                border: none;
+
+                .profile-card {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    grid-area: profile;
+                }
+
+                >* {
+                    max-width: 400px;
+                    width: 100%;
+                }
+            }
+
+            .account-change-form {
+                display: grid;
+                grid-template-areas:
+                    "profile inputs"
+                    "profile nav";
+                align-items: center;
+                column-gap: 20px;
+
+                &__inputs {
+                    grid-area: inputs;
+                }
+
+                &__nav {
+                    grid-area: nav;
+
+                }
+            }
+
+        }
+
+        .account-remove-form {
+            >*:not(:last-child) {
+                margin-bottom: 40px;
+            }
+        }
+
+        @media screen and (max-width: $lg) {
+            .account-change-form {
+                display: flex;
+                flex-direction: column;
+
+            }
+        }
+
+        @media screen and (max-width: $md) {
+            grid-template-columns: auto;
+            grid-template-rows: auto 1fr;
+
+            &__nav {
+                min-width: auto;
+            }
+        }
+    }
+
+    .side-nav {
+        user-select: none;
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            height: 50px;
+            padding: 5px 20px;
+            font-weight: 500;
+            border-radius: 5px;
+            color: $mainGray;
+            transition: .3s ease-in-out;
+            cursor: pointer;
+
+            * {
+                color: inherit;
+            }
+
+            &__icon {
+                font-size: 20px;
+            }
+
+            &-selected {
+                background-color: $lightViolet;
+                color: $white;
+                box-shadow: 0px 0px 20px 0px rgba($lightViolet, 0.5);
+            }
+
+            &:hover:not(&-selected) {
+                color: $lightViolet;
+            }
+        }
+
+        >* {
+            width: 100%;
+        }
+
+        >*:not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        @media screen and (max-width: $sm) {}
+    }
+
+    .profile-card {
+        text-align: center;
+        font-weight: 500;
+
+        &__title {
+            font-size: $h3-fz;
+        }
+
+        &__subtitle {
+            font-size: $reg-fz;
+            color: $lightViolet;
+        }
+
+        >*:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
 
     //Footer styles
 
