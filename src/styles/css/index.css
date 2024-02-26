@@ -229,6 +229,10 @@ textarea {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-search:before {
+  content: "\e924";
+}
+
 .icon-update:before {
   content: "\e923";
 }
@@ -431,7 +435,7 @@ h3 {
   height: calc(100% + 150px);
 }
 
-.button-base, .button-danger, .button-violet-light, .button-violet, .button-white-tp {
+.button-base, .button-gray, .button-danger, .button-violet-light, .button-violet, .button-white-tp {
   height: 50px;
   border-radius: 5px;
   background-color: #fff;
@@ -482,18 +486,31 @@ h3 {
   box-shadow: 0px 0px 20px 0px rgba(140, 116, 255, 0.5);
 }
 .button-danger {
-  background-color: #FF7E7E;
+  background-color: #ff616e;
   color: #fff;
   outline: solid 4px transparent;
   transition: 0.4s ease-in-out;
 }
 .button-danger:hover {
-  background-color: #FF525C;
-  outline: solid 4px rgba(255, 126, 126, 0.4);
+  background-color: #ff2732;
+  outline: solid 4px rgba(255, 97, 110, 0.4);
 }
 .button-danger:focus {
-  background-color: #FF525C;
-  outline: solid 4px rgba(255, 126, 126, 0.4);
+  background-color: #ff2732;
+  outline: solid 4px rgba(255, 97, 110, 0.4);
+}
+
+.button-gray {
+  background-color: #F3F3F3;
+  color: #505050;
+  outline: solid 4px transparent;
+  transition: 0.4s ease-in-out;
+}
+.button-gray:hover {
+  background-color: #dadada;
+}
+.button-gray:focus {
+  background-color: #dadada;
 }
 
 .inputs-base, .search-form__input, .input-danger, .input-gray, .input-transparent {
@@ -509,15 +526,15 @@ h3 {
 
 .input-danger {
   background-color: #fff;
-  color: #FF525C;
-  border: solid 2px #FF525C;
+  color: #ff2732;
+  border: solid 2px #ff2732;
   animation: shake 0.2s;
 }
 .input-danger::-moz-placeholder {
-  color: #FF525C;
+  color: #ff2732;
 }
 .input-danger::placeholder {
-  color: #FF525C;
+  color: #ff2732;
 }
 @keyframes shake {
   0% {
@@ -542,7 +559,7 @@ h3 {
 }
 
 .text-danger {
-  color: #FF525C;
+  color: #ff2732;
 }
 
 .linked-text {
@@ -554,7 +571,7 @@ h3 {
 }
 
 .required {
-  color: #FF525C;
+  color: #ff2732;
 }
 .required:before {
   content: "* ";
@@ -707,11 +724,16 @@ h3 {
   margin-bottom: 40px;
 }
 
-.public-page .main__title {
+.common-page-wrapper > *:first-child {
   margin-top: 40px;
+}
+.common-page-wrapper > * {
+  margin-bottom: 40px;
 }
 
 .search-form {
+  display: flex;
+  gap: 0;
   width: 100%;
 }
 .search-form__input {
@@ -719,6 +741,8 @@ h3 {
   width: 100%;
   padding: 0 10px !important;
   font-weight: 500;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
   text-overflow: ellipsis;
 }
 .search-form__input::-moz-placeholder {
@@ -726,6 +750,13 @@ h3 {
 }
 .search-form__input::placeholder {
   color: #B8B8B8;
+}
+.search-form__button {
+  height: 50px;
+  width: 80px;
+  font-size: 24px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .pagination-form {
@@ -764,6 +795,16 @@ h3 {
 
 .courses > *:not(:last-child) {
   margin-bottom: 20px;
+}
+.courses__controls {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.courses__add-button {
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
 }
 
 .course-item {
@@ -849,6 +890,7 @@ h3 {
   max-width: 600px;
   padding: 40px 80px;
   border: solid 2px #F3F3F3;
+  border-radius: 5px;
 }
 .base-form > *:not(:last-child) {
   margin-bottom: 100px;
@@ -932,6 +974,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   border: none;
+  border-radius: none;
 }
 .account-page__content .base-form .profile-card {
   display: flex;
@@ -1025,6 +1068,42 @@ h3 {
 }
 .profile-card > *:not(:last-child) {
   margin-bottom: 10px;
+}
+
+.selection-panel {
+  display: flex;
+  font-weight: 500;
+  z-index: 0;
+}
+@media screen and (max-width: 392px) {
+  .selection-panel {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.selection-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  padding: 0 20px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+.selection-item:hover {
+  color: #8C74FF;
+}
+.selection-item-active {
+  background-color: #f6f4ff;
+  color: #8C74FF;
+  border-bottom: solid 3px #8C74FF;
+}
+@media screen and (max-width: 392px) {
+  .selection-item-active {
+    border-bottom: none;
+  }
 }
 
 .footer {

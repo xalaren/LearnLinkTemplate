@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Link</title>
+
+    <link rel="stylesheet" href="/src/styles/css/index.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container container">
+                <div class="header__logo logo-pic">
+                    <img src="../assets/img/learnlinklogo.svg" alt="Logo" class="logo-pic__img">
+                    <h1 class="logo-pic__title">Learn Link</h1>
+                </div>
+                <nav class="header__nav">
+                    <!-- <div class="header__buttons">
+                        <button class="button-white-tp">Войти</button>
+                        <button class="button-white-tp">Регистрация</button>
+                    </div> -->
+                    <div class="header__dropdown dropdown">
+                        <div class="dropdown__head">
+                            <img class="dropdown__profile-image" src="../assets/img/profile_placeholder.svg"
+                                alt="Профиль">
+                            <p class="dropdown__profile-name">valorex</p>
+                            <p class="icon icon-arrow-down"></p>
+                        </div>
+                        <!-- <div class="dropdown__items">
+                            <div class="dropdown__item">
+                                <span class="icon icon-user"></span> Профиль
+                            </div>
+                            <div class="dropdown__item">
+                                <span class="icon icon-star"></span> Мои курсы
+                            </div>
+                            <div class="dropdown__item">
+                                <span class="icon icon-power"></span> Выйти
+                            </div>
+                        </div> -->
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main user-courses-page common-page-wrapper container">
+            <h3>Мои доступные курсы</h3>
+
+            <section class="user-courses-page__controls">
+                <nav class="user-courses-page__selection-panel selection-panel">
+                    <div class="selection-panel__selection-item selection-item selection-item-active">Созданные</div>
+                    <div class="selection-panel__selection-item selection-item">Подписки</div>
+                    <div class="selection-panel__selection-item selection-item">Скрытые</div>
+                </nav>
+
+            </section>
+
+            <form action="#" class="user-courses-page__search-form search-form">
+                <input type="text" class="search-form__input" placeholder="Найти по названию курса или категории...">
+                <button class="search-form__button button-violet icon-search"></button>
+            </form>
+
+            <form action="#" class="user-courses-page__pagination-form pagination-form">
+                <button class="pagination-form__button button-violet-light icon-arrow-left-dotted"></button>
+                <button class="pagination-form__button button-violet-light button-violet-light-selected ">1</button>
+                <button class="pagination-form__button button-violet-light">2</button>
+                <button class="pagination-form__button button-violet-light">3</button>
+                <button class="pagination-form__button button-violet-light">...</button>
+                <button class="pagination-form__button button-violet-light icon-arrow-right-dotted"></button>
+            </form>
+
+            <section class="public-page__courses courses">
+
+                <nav class="courses__controls">
+                    <button class="courses__add-button button-gray icon-plus"></button>
+                </nav>
+
+                <div class="courses__course-item course-item">
+                    <div class="course-item__info">
+                        <div class="course-item__head">
+                            <p class="course-item__title">Test course</p>
+                            <div class="course-item__categories">
+                                <p>Категории: </p>
+                                <p class="linked-text">программирование </p>
+                                <p class="linked-text">математика </p>
+                                <p class="linked-text">алгоритмы </p>
+                            </div>
+                        </div>
+                        <div class="course-item__additional">
+                            <span class="course-item__icon icon-user"></span>
+                            10.000
+                        </div>
+                    </div>
+                    <div class="course-item__properties">
+                        <span class="course-item__icon icon-invisible"></span>
+                        <span class="course-item__icon icon-user-lock"></span>
+                    </div>
+                </div>
+
+                <div class="courses__course-item course-item">
+                    <div class="course-item__info">
+                        <div class="course-item__head">
+                            <p class="course-item__title">Test course</p>
+                            <div class="course-item__categories">
+                                <p>Категории: </p>
+                                <p class="linked-text">программирование </p>
+                                <p class="linked-text">математика </p>
+                                <p class="linked-text">алгоритмы </p>
+                            </div>
+                        </div>
+                        <div class="course-item__additional">
+                            <span class="course-item__icon icon-user"></span>
+                            10.000
+                        </div>
+                    </div>
+                    <div class="course-item__properties">
+                        <span class="course-item__icon icon-invisible"></span>
+                        <span class="course-item__icon icon-user-lock"></span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__content container">
+                <p class="footer__title">
+                    Learn Link
+                </p>
+                <p class="footer__text">
+                    Платформа для разработки и публикации образовательных курсов <br />
+                    ©2023-2024
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

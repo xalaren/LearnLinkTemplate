@@ -19,6 +19,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-search:before {
+  content: "\e924";
+}
+
 .icon-update:before {
   content: "\e923";
 }
