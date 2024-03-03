@@ -1,286 +1,9 @@
     @import "reset.scss";
     @import "fontimports.scss";
     @import "icons.scss";
-
-    //Font size variables
-
-    $h1-fz: 42px;
-    $h2-fz: 26px;
-    $h3-fz: 20px;
-    $big-fz: 32px;
-    $medium-fz: 22px;
-    $inputs-fz: 20px;
-    $reg-fz: 16px;
-    $small-fz: 12px;
-    $tiny-fz: 10px;
-
-
-    //Colors variables
-
-    $mainGray: #505050;
-    $secondaryGray: #B8B8B8;
-    $veryLightGray: #F3F3F3;
-    $lightGray: #dadada;
-    $white: #fff;
-    $mainViolet: #8234ff;
-    $lightViolet: #8C74FF;
-    $veryLightViolet: #f6f4ff;
-    $darkViolet: #180034;
-    $red: #ff2732;
-    $darkerRed: #dd151f;
-    $lightRed: #ff616e;
-
-    //Media breakpoints variables
-
-    $xs: 392px;
-    $sm: 576px;
-    $md: 768px;
-    $lg: 992px;
-    $xl: 1280px;
-
-    //Built-in styles
-
-
-    * {
-        font-size: $reg-fz;
-        color: $mainGray;
-    }
-
-    body {
-        background-color: $white;
-    }
-
-    button {
-        border: none;
-        outline: none;
-        cursor: pointer;
-        background: none;
-        padding: 0;
-        margin: 0;
-        font-size: $reg-fz;
-    }
-
-    input,
-    textarea {
-        padding: 0;
-        margin: 0;
-        min-height: 30px;
-        border: none;
-        outline: none;
-        color: $mainGray;
-        font-size: $reg-fz;
-    }
-
-    h1 {
-        font-size: $h1-fz;
-        font-weight: 700;
-    }
-
-    h2 {
-        font-size: $h2-fz;
-        font-weight: 600;
-    }
-
-    h3 {
-        font-size: $h2-fz;
-        font-weight: 600;
-    }
-
-    //Common style classes
-
-    .container {
-        box-sizing: border-box;
-        padding: 0 20px;
-        max-width: 1280px;
-        margin: 0 auto;
-    }
-
-    .wrapper {
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-        height: calc(100% + 150px);
-    }
-
-    .button-base {
-        height: 50px;
-        border-radius: 5px;
-        background-color: $white;
-        font-weight: 500;
-        padding: 10px;
-    }
-
-    .button-white-tp {
-        @extend .button-base;
-        background-color: rgba($white, 0.3);
-        color: $white;
-        outline: solid 4px transparent;
-
-        transition: .3s ease-in-out;
-
-        &:hover {
-            background-color: $white;
-            color: $mainGray;
-            outline: solid 4px rgba($white, 0.3);
-        }
-
-        &:focus {
-            background-color: $white;
-            color: $mainGray;
-            outline: solid 4px rgba($white, 0.3);
-        }
-    }
-
-    .button-violet {
-        @extend .button-base;
-        background-color: $lightViolet;
-        color: $white;
-        outline: solid 4px transparent;
-
-        transition: .4s ease-in-out;
-
-        &:hover {
-            background-color: $mainViolet;
-            outline: solid 4px rgba($lightViolet, 0.4);
-        }
-
-        &:focus {
-            background-color: $mainViolet;
-            outline: solid 4px rgba($lightViolet, 0.4);
-        }
-    }
-
-    .button-violet-light {
-        @extend .button-base;
-        background-color: $veryLightViolet;
-        color: $lightViolet;
-
-        transition: .4s ease-in-out;
-
-        &-selected {
-            background-color: $lightViolet;
-            color: $white;
-            box-shadow: 0px 0px 20px 0px rgba($lightViolet, 0.5);
-        }
-
-        &:hover {
-            @extend .button-violet-light-selected;
-        }
-    }
-
-    .button-danger {
-        @extend .button-base;
-        background-color: $lightRed;
-        color: $white;
-        outline: solid 4px transparent;
-
-        transition: .4s ease-in-out;
-
-        &:hover {
-            background-color: $red;
-            outline: solid 4px rgba($lightRed, 0.4);
-        }
-
-        &:focus {
-            background-color: $red;
-            outline: solid 4px rgba($lightRed, 0.4);
-        }
-    }
-
-    .button-gray {
-        @extend .button-base;
-        background-color: $veryLightGray;
-        color: $mainGray;
-        outline: solid 4px transparent;
-
-        transition: .4s ease-in-out;
-
-        &:hover {
-            background-color: $lightGray;
-        }
-
-        &:focus {
-            background-color: $lightGray;
-        }
-    }
-
-    .inputs-base {
-        border-radius: 5px;
-        background: $veryLightGray;
-        padding: 10px;
-        min-height: 50px;
-    }
-
-    .input-transparent {
-        @extend .inputs-base;
-        background-color: transparent;
-    }
-
-    .input-gray {
-        @extend .inputs-base;
-    }
-
-    .input-danger {
-        @extend.inputs-base;
-        $ml: 3px;
-        background-color: $white;
-        color: $red;
-        border: solid 2px $red;
-
-        animation: shake .2s;
-
-        &::placeholder {
-            color: $red;
-        }
-
-        @keyframes shake {
-            0% {
-                transform: translateX($ml);
-            }
-
-            25% {
-                transform: translateX($ml * (-1));
-            }
-
-            50% {
-                transform: translateX($ml);
-            }
-
-            100% {
-                transform: translateX($ml * (-1));
-            }
-        }
-
-    }
-
-    .ui-text {
-        color: $mainGray;
-        line-height: 1.5;
-        font-size: $reg-fz;
-        font-weight: 400;
-    }
-
-    .text-danger {
-        @extend .ui-text;
-        color: $red;
-    }
-
-    .linked-text {
-        color: $mainViolet;
-        cursor: pointer;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-
-    .required {
-        color: $red;
-
-        &:before {
-            content: '* '
-        }
-    }
-
+    @import "variables.scss";
+    @import "helpers.scss";
+    @import "mixins.scss";
 
 
     //General styles
@@ -411,6 +134,7 @@
 
         &__items {
             position: absolute;
+            z-index: 3;
             top: calc(100% + 20px);
             right: 0;
             width: max-content;
@@ -450,6 +174,20 @@
         }
     }
 
+    .ellipsis-button {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        font-size: 24px;
+        background-color: $veryLightGray;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            background-color: $lightGray;
+        }
+
+    }
+
     .main {
         width: 100%;
 
@@ -481,7 +219,6 @@
             font-weight: 500;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
-            text-overflow: ellipsis;
 
             &::placeholder {
                 color: $secondaryGray;
@@ -580,7 +317,7 @@
         }
 
         &__title {
-            font-size: $medium-fz;
+            font-size: $h3-fz;
             font-weight: 500;
         }
 
@@ -898,33 +635,184 @@
         padding: 0 20px;
         position: relative;
         cursor: pointer;
+        border-bottom: solid 3px transparent;
         transition: .3s ease-in-out;
 
         &:hover {
             color: $lightViolet;
         }
 
-        &-active {
+        &-selected {
             background-color: $veryLightViolet;
             color: $lightViolet;
             border-bottom: solid 3px $lightViolet;
-
-            // &::after {
-            //     $lh: 3px;
-            //     content: "";
-            //     position: absolute;
-            //     height: $lh;
-            //     width: 100%;
-            //     background-color: $lightViolet;
-            //     bottom: $lh;
-            //     left: 0;
-            // }
         }
 
         @media screen and (max-width: $xs) {
             &-active {
                 border-bottom: none;
             }
+        }
+    }
+
+
+    .course-page {
+        &__header {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .content-side {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 40px;
+
+        &__main {
+            padding-right: 60px;
+            border-right: solid 2px $veryLightGray;
+        }
+
+        @media screen and (max-width: $md) {
+            grid-template-columns: none;
+            grid-template-rows: auto 1fr;
+            row-gap: 40px;
+
+            &__main {
+                padding-right: 0;
+                border-right: none;
+                padding-bottom: 40px;
+                border-bottom: solid 2px $veryLightGray;
+            }
+        }
+    }
+
+    .content-list {
+        &__head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        &__add-button {
+            width: 50px;
+            height: 50px;
+        }
+
+        &__items {
+            >*:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .item-link {
+        height: 50px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 5px;
+        cursor: pointer;
+        user-select: none;
+
+        &__info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-weight: 500;
+        }
+    }
+
+    .link-light-violet {
+        color: $lightViolet;
+        transition: .3s ease-in-out;
+
+        * {
+            color: inherit;
+        }
+
+        &:hover {
+            background-color: $veryLightViolet;
+        }
+    }
+
+    .enter-module-form {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 20px;
+
+        &__input {
+            min-width: 120px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        &__buttons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+            gap: 20px;
+        }
+
+        &__button {
+            padding: 0;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+        }
+
+        @media screen and (max-width: $sm) {
+            column-gap: 10px;
+
+            &__buttons {
+                gap: 10px;
+            }
+        }
+    }
+
+    .content-about {
+
+        @include child-not-last {
+            margin-bottom: 40px;
+        }
+
+        &__button {
+            width: 100%;
+        }
+
+        &__list {
+
+            @include child-not-last {
+                margin-bottom: 20px;
+            }
+
+            .text-violet {
+                font-weight: 500;
+            }
+
+            .progress-bar {
+                width: 100%;
+            }
+        }
+    }
+
+    .progress-bar {
+        position: relative;
+        min-width: 200px;
+        height: 20px;
+        background-color: $veryLightGray;
+        border-radius: 10px;
+
+        &__progress {
+            position: absolute;
+            height: inherit;
+            border-radius: inherit;
+            background-color: $lightViolet;
         }
     }
 

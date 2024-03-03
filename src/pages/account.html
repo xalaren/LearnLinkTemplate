@@ -7,21 +7,18 @@
     <title>Learn Link</title>
 
     <link rel="stylesheet" href="/src/styles/css/index.css">
+    <script type="text/javascript" src="../js/index.js" defer></script>
 </head>
 
 <body>
     <div class="wrapper">
         <header class="header">
             <div class="header__container container">
-                <div class="header__logo logo-pic">
+                <div class="header__logo logo-pic" onclick="redirect()">
                     <img src="../assets/img/learnlinklogo.svg" alt="Logo" class="logo-pic__img">
                     <h1 class="logo-pic__title">Learn Link</h1>
                 </div>
                 <nav class="header__nav">
-                    <!-- <div class="header__buttons">
-                        <button class="button-white-tp">Войти</button>
-                        <button class="button-white-tp">Регистрация</button>
-                    </div> -->
                     <div class="header__dropdown dropdown">
                         <div class="dropdown__head">
                             <img class="dropdown__profile-image" src="../assets/img/profile_placeholder.svg"
@@ -29,17 +26,17 @@
                             <p class="dropdown__profile-name">valorex</p>
                             <p class="icon icon-arrow-down"></p>
                         </div>
-                        <!-- <div class="dropdown__items">
-                            <div class="dropdown__item">
+                        <div class="dropdown__items">
+                            <div class="dropdown__item" onclick="redirect('account')">
                                 <span class="icon icon-user"></span> Профиль
                             </div>
                             <div class="dropdown__item">
-                                <span class="icon icon-star"></span> Мои курсы
+                                <span class="icon icon-star" onclick="redirect('user-courses')"></span> Мои курсы
                             </div>
                             <div class="dropdown__item">
-                                <span class="icon icon-power"></span> Выйти
+                                <span class="icon icon-power" onclick="redirect()"></span> Выйти
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -50,99 +47,25 @@
                 <div class="side-nav__profile">
 
                 </div>
-                <div class="side-nav__nav-link nav-link">
+                <div class="side-nav__nav-link nav-link" onclick="display(mainInfo)">
                     <span class="nav-link__icon icon-user"></span>
                     Основные данные
                 </div>
-                <div class="side-nav__nav-link nav-link">
+                <div class="side-nav__nav-link nav-link" onclick="display(changePassword)">
                     <span class="nav-link__icon icon-lock"></span>
                     Изменить пароль
                 </div>
-                <div class="side-nav__nav-link nav-link nav-link-selected">
+                <div class="side-nav__nav-link nav-link" onclick="redirect('user_courses')">
+                    <span class="nav-link__icon icon-star"></span>
+                    Мои курсы
+                </div>
+                <div class="side-nav__nav-link nav-link nav-link-selected" onclick="display(removeAccount)">
                     <span class="nav-link__icon icon-cross"></span>
                     Удалить профиль
                 </div>
             </nav>
 
             <div class="account-page__content">
-                <!-- <h3 class="account-page__title">Основные данные</h3>
-
-                <form action="#" class="base-form account-change-form">
-
-                    <div class="base-form__profile profile-card">
-                        <div class="image-uploader profile-card__image">
-                            <label for="image-upload" class="image-uploader__label">
-                                <div class="image-reuploadable">
-                                    <img src="/src/assets/img/profile_placeholder.svg" alt="Изображение профиля">
-                                    <div class="image-reuploadable__icon icon-update"></div>
-                                </div>
-                            </label>
-                            <input type="file" class="image-uploader__input" id="image-upload"
-                                accept="image/jpeg, image/png, image/jpg">
-                        </div>
-                        <p class="profile-card__title">Name Lastname</p>
-                        <p class="profile-card__subtitle">@valorex (Администратор)</p>
-                    </div>
-
-                    <div class="base-form__inputs">
-
-                        <div class="base-form__form-input form-input">
-                            <p class="form-input__label">Никнейм</p>
-                            <input type="text" class="form-input__input input-gray" placeholder="Введите никнейм...">
-                        </div>
-                        <div class="base-form__form-input form-input">
-                            <p class="form-input__label">Фамилия</p>
-                            <input type="text" class="form-input__input input-gray" placeholder="Введите фамилию...">
-                        </div>
-                        <div class="base-form__form-input form-input">
-                            <p class="form-input__label">Имя</p>
-                            <input type="text" class="form-input__input input-gray" placeholder="Введите имя...">
-                        </div>
-
-                    </div>
-                    <nav class="base-form__nav">
-                        <button type="submit" class="base-form__button button-violet">Сохранить изменения</button>
-                    </nav>
-                </form> -->
-
-
-                <!-- <h3 class="account-page__title">Изменение пароля</h3>
-
-                <form action="#" class="base-form">
-
-                    <div class="base-form__inputs">
-
-                        <div class="base-form__form-input form-input">
-                            <p class="form-input__label">Старый пароль</p>
-                            <input type="text" class="form-input__input input-gray"
-                                placeholder="Введите старый пароль...">
-                        </div>
-                        <div class="base-form__form-input form-input">
-                            <p class="form-input__label">Новый пароль</p>
-                            <input type="text" class="form-input__input input-gray"
-                                placeholder="Введите новый пароль...">
-                        </div>
-
-                    </div>
-                    <nav class="base-form__nav">
-                        <button type="submit" class="base-form__button button-violet">Сохранить изменения</button>
-                    </nav>
-                </form> -->
-
-                <h3 class="account-page__title">Удаление профиля</h3>
-
-                <form action="#" class="account-remove-form">
-                    <div class="text-danger">
-                        Вы действительно хотите удалить профиль?
-                        <br />
-                        Все данные будут безвозвратно удалены!
-                    </div>
-
-                    <button class="button-danger">Удалить</button>
-                </form>
-
-
-
             </div>
         </main>
 
@@ -158,6 +81,121 @@
             </div>
         </footer>
     </div>
+
+    <script>
+        init();
+
+        function init() {
+            display(mainInfo);
+        }
+
+        function display(content) {
+            const contentContainer = document.querySelector('.account-page__content');
+
+            contentContainer.innerHTML = content();
+        }
+
+        function selectNavLink(index) {
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(item => item.classList.remove('nav-link-selected'));
+            navLinks[index].classList.add('nav-link-selected');
+        }
+
+
+
+        function mainInfo() {
+            selectNavLink(0);
+
+            return `
+            <h3 class="account-page__title">Основные данные</h3>
+
+            <form action="#" class="base-form account-change-form">
+
+                <div class="base-form__profile profile-card">
+                    <div class="image-uploader profile-card__image">
+                        <label for="image-upload" class="image-uploader__label">
+                            <div class="image-reuploadable">
+                                <img src="/src/assets/img/profile_placeholder.svg" alt="Изображение профиля">
+                                <div class="image-reuploadable__icon icon-update"></div>
+                            </div>
+                        </label>
+                        <input type="file" class="image-uploader__input" id="image-upload"
+                            accept="image/jpeg, image/png, image/jpg">
+                    </div>
+                    <p class="profile-card__title">Name Lastname</p>
+                    <p class="profile-card__subtitle">@valorex (Администратор)</p>
+                </div>
+
+                <div class="base-form__inputs">
+
+                    <div class="base-form__form-input form-input">
+                        <p class="form-input__label">Никнейм</p>
+                        <input type="text" class="form-input__input input-gray" placeholder="Введите никнейм...">
+                    </div>
+                    <div class="base-form__form-input form-input">
+                        <p class="form-input__label">Фамилия</p>
+                        <input type="text" class="form-input__input input-gray" placeholder="Введите фамилию...">
+                    </div>
+                    <div class="base-form__form-input form-input">
+                        <p class="form-input__label">Имя</p>
+                        <input type="text" class="form-input__input input-gray" placeholder="Введите имя...">
+                    </div>
+
+                </div>
+                <nav class="base-form__nav">
+                    <button type="submit" class="base-form__button button-violet">Сохранить изменения</button>
+                </nav>
+            </form>`
+        }
+
+        function changePassword() {
+            selectNavLink(1);
+
+            return `
+            <h3 class="account-page__title">Изменение пароля</h3>
+
+            <form action="#" class="base-form">
+
+                <div class="base-form__inputs">
+
+                    <div class="base-form__form-input form-input">
+                        <p class="form-input__label">Старый пароль</p>
+                        <input type="text" class="form-input__input input-gray"
+                            placeholder="Введите старый пароль...">
+                    </div>
+                    <div class="base-form__form-input form-input">
+                        <p class="form-input__label">Новый пароль</p>
+                        <input type="text" class="form-input__input input-gray"
+                            placeholder="Введите новый пароль...">
+                    </div>
+
+                </div>
+                <nav class="base-form__nav">
+                    <button type="submit" class="base-form__button button-violet">Сохранить изменения</button>
+                </nav>
+            </form>
+            `
+        }
+
+        function removeAccount() {
+            selectNavLink(3);
+
+            return `
+            <h3 class="account-page__title">Удаление профиля</h3>
+
+            <form action="#" class="account-remove-form">
+                <div class="text-danger">
+                    Вы действительно хотите удалить профиль?
+                    <br />
+                    Все данные будут безвозвратно удалены!
+                </div>
+
+                <button class="button-danger">Удалить</button>
+            </form>
+            `
+        }
+    </script>
 </body>
 
 </html>

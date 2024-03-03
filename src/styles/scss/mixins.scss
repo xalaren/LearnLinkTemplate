@@ -1,0 +1,6 @@
+@mixin child-not-last {
+    >*:not(:last-child) {
+        @content;
+    }
+
+}

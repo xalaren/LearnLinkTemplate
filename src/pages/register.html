@@ -7,6 +7,7 @@
     <title>Learn Link</title>
 
     <link rel="stylesheet" href="/src/styles/css/index.css">
+    <script type="text/javascript" src="../js/index.js" defer></script>
 </head>
 
 <body>
@@ -19,8 +20,8 @@
                 </div>
                 <nav class="header__nav">
                     <div class="header__buttons">
-                        <button class="button-white-tp">Войти</button>
-                        <button class="button-white-tp">Регистрация</button>
+                        <button class="button-white-tp" onclick="redirect('login')">Войти</button>
+                        <button class="button-white-tp" onclick="redirect('register')">Регистрация</button>
                     </div>
                     <!-- <div class="header__dropdown dropdown">
                         <div class="dropdown__head">
@@ -46,7 +47,7 @@
         </header>
 
         <main class="main auth-page container">
-            <form action="#" class="auth-page__base-form base-form">
+            <form action="login.html" class="auth-page__base-form base-form">
                 <h3 class="base-form__title">Регистрация</h3>
 
                 <div class="base-form__image-uploader image-uploader">

@@ -7,20 +7,21 @@
     <title>Learn Link</title>
 
     <link rel="stylesheet" href="/src/styles/css/index.css">
+    <script type="text/javascript" src="../js/index.js" defer></script>
 </head>
 
 <body>
     <div class="wrapper">
         <header class="header">
             <div class="header__container container">
-                <div class="header__logo logo-pic">
+                <div class="header__logo logo-pic" onclick="redirect()">
                     <img src="../assets/img/learnlinklogo.svg" alt="Logo" class="logo-pic__img">
                     <h1 class="logo-pic__title">Learn Link</h1>
                 </div>
                 <nav class="header__nav">
                     <div class="header__buttons">
-                        <button class="button-white-tp">Войти</button>
-                        <button class="button-white-tp">Регистрация</button>
+                        <button class="button-white-tp" onclick="redirect('login')">Войти</button>
+                        <button class="button-white-tp" onclick="redirect('register')">Регистрация</button>
                     </div>
                     <!-- <div class="header__dropdown dropdown">
                         <div class="dropdown__head">
@@ -46,7 +47,7 @@
         </header>
 
         <main class="main auth-page container">
-            <form action="#" class="auth-page__base-form base-form">
+            <form action="account.html" class="auth-page__base-form base-form">
                 <h3 class="base-form__title">Вход в систему</h3>
                 <div class="base-form__inputs">
                     <div class="base-form__form-input form-input">
