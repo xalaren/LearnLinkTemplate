@@ -740,38 +740,32 @@
     }
 
     .enter-module-form {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        column-gap: 20px;
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+        align-items: center;
+        padding: 20px;
 
         &__input {
-            min-width: 120px;
-            max-width: 400px;
             width: 100%;
+            max-width: 400px;
         }
 
         &__buttons {
             display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            width: 100%;
-            gap: 20px;
+
+            @include child-not-last {
+                margin-right: 10px;
+            }
         }
+
 
         &__button {
             padding: 0;
+            min-width: 40px;
             width: 40px;
             height: 40px;
             font-size: 20px;
-        }
-
-        @media screen and (max-width: $sm) {
-            column-gap: 10px;
-
-            &__buttons {
-                gap: 10px;
-            }
         }
     }
 
