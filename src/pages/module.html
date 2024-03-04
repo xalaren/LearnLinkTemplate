@@ -44,7 +44,7 @@
 
         <main class="main common-page-wrapper course-page container">
             <section class="course-page__header">
-                <p class="course-page__title big-text">Курс 1</p>
+                <p class="course-page__title big-text">Модуль 1</p>
 
                 <div class="course-page__dropdown dropdown">
                     <div class="dropdown__head">
@@ -52,13 +52,7 @@
                     </div>
                     <div class="dropdown__items">
                         <div class="dropdown__item">
-                            <span class="icon icon-user-group-circle"></span> Участники
-                        </div>
-                        <div class="dropdown__item">
                             <span class="icon icon-pen-circle"></span> Редактировать
-                        </div>
-                        <div class="dropdown__item">
-                            <span class="icon icon-invisible-circle"></span> Скрыть
                         </div>
                         <div class="dropdown__item">
                             <span class="icon icon-cross-circle"></span> Удалить
@@ -75,50 +69,41 @@
             <section class="course-page__content content-side">
                 <div class="content-side__main content-list">
                     <div class="content-list__head">
-                        <h3>Изучаемые модули</h3>
+                        <h3>Уроки модуля</h3>
                         <button class="content-list__add-button button-gray icon-plus icon-medium-size"></button>
                     </div>
                     <div class="content-list__items">
-                        <div class="content-list__item item-link link-light-violet" onclick="redirect('module')">
-                            <div class="item-link__info">
-                                <span class="icon-module icon-medium-size"></span>
-                                Модуль 1
+                        <div class="content-list__item">
+                            <div class="item-link link-light-violet">
+                                <div class="item-link__info">
+                                    <span class="icon-book icon-medium-size"></span>
+                                    Урок 1
+                                </div>
                             </div>
-                            <div class="item-link__properties">
-                                <span class="icon-check icon-medium-size"></span>
-                            </div>
-                        </div>
-                        <div class="content-list__item item-link link-light-violet" onclick="redirect('module')">
-                            <div class="item-link__info">
-                                <span class="icon-module icon-medium-size"></span>
-                                Модуль 1
-                            </div>
-                            <div class="item-link__properties">
-                                <span class="icon-check icon-medium-size"></span>
+                            <div class="item-link__checkbox checkbox">
+                                <div class="checkbox__check icon-check icon-normal-size">
+                                </div>
                             </div>
                         </div>
-                        <form class="content-list__item enter-module-form">
-                            <input type="text" class="enter-module-form__input input-line"
-                                placeholder="Введите название модуля...">
-                            <div class="enter-module-form__buttons">
-                                <button class="enter-module-form__button button-white-red icon-cross"></button>
-                                <button class="enter-module-form__button button-white-green icon-check"></button>
+
+                        <div class="content-list__item">
+                            <div class="item-link link-light-violet">
+                                <div class="item-link__info">
+                                    <span class="icon-book icon-medium-size"></span>
+                                    Урок 1
+                                </div>
                             </div>
-                        </form>
+                            <div class="item-link__checkbox checkbox checkbox-checked">
+                                <div class="checkbox__check icon-check icon-normal-size">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <aside class="content-side__aside content-about">
-                    <h3 class="content-about__title">О курсе</h3>
-                    <button class="content-about__button button-violet-outline">Подписаться</button>
+                    <h3 class="content-about__title">О модуле</h3>
                     <ul class="content-about__list">
-                        <li class="content-about__list-item">Видимость курса:
-                            <span class="text-violet">общий
-                                доступ</span>
-                        </li>
-                        <li class="content-about__list-item">Подписчики:
-                            <span class="text-violet">0</span>
-                        </li>
                         <li class="content-about__list-item">Прогресс выполнения:
                             <span class="text-violet">50%</span>
                         </li>
