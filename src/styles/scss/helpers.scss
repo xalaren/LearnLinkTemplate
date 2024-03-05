@@ -220,6 +220,25 @@ h3 {
     }
 }
 
+.button-round-violet {
+    $width: 40px;
+    min-width: $width;
+    min-height: $width;
+    width: $width;
+    height: $width;
+    background-color: $veryLightViolet;
+    border-radius: 20px;
+    color: $lightViolet;
+
+    transition: .4s ease-in-out;
+
+
+    &:hover {
+        background-color: $lightViolet;
+        color: $white;
+    }
+}
+
 .inputs-base {
     border-radius: 5px;
     background: $veryLightGray;

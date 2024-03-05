@@ -556,6 +556,21 @@ h3 {
   outline: solid 4px rgba(76, 221, 199, 0.4);
 }
 
+.button-round-violet {
+  min-width: 40px;
+  min-height: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: #f6f4ff;
+  border-radius: 20px;
+  color: #8C74FF;
+  transition: 0.4s ease-in-out;
+}
+.button-round-violet:hover {
+  background-color: #8C74FF;
+  color: #fff;
+}
+
 .inputs-base, .search-form__input, .input-line, .input-danger, .input-gray, .input-transparent {
   border-radius: 5px;
   background: #F3F3F3;
@@ -877,15 +892,15 @@ h3 {
   }
 }
 
-.courses > *:not(:last-child) {
+.control-list > *:not(:last-child) {
   margin-bottom: 20px;
 }
-.courses__controls {
+.control-list__controls {
   width: 100%;
   display: flex;
   justify-content: flex-end;
 }
-.courses__add-button {
+.control-list__add-button {
   font-size: 24px;
   width: 50px;
   height: 50px;
@@ -1066,6 +1081,9 @@ h3 {
   align-items: center;
   grid-area: profile;
 }
+.account-page__content .base-form .profile-card__subtitle {
+  font-weight: 500;
+}
 .account-page__content .base-form > * {
   max-width: 400px;
   width: 100%;
@@ -1139,16 +1157,12 @@ h3 {
 .side-nav > *:not(:last-child) {
   margin-bottom: 20px;
 }
-.profile-card {
-  text-align: center;
-  font-weight: 500;
-}
 .profile-card__title {
   font-size: 22px;
+  font-weight: 500;
 }
 .profile-card__subtitle {
   font-size: 16px;
-  color: #8C74FF;
 }
 .profile-card > *:not(:last-child) {
   margin-bottom: 10px;
@@ -1366,6 +1380,29 @@ h3 {
 }
 .checkbox:focus:not(.checkbox-checked) > * {
   color: #8C74FF;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 2px #F3F3F3;
+  border-radius: 5px;
+  padding: 40px 20px;
+}
+.user-item__profile {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.user-item__image {
+  min-width: 60px;
+  width: 60px;
+  height: 60px;
+}
+.user-item__properties {
+  display: flex;
+  gap: 10px;
 }
 
 .footer {

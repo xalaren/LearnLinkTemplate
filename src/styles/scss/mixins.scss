@@ -2,5 +2,14 @@
     >*:not(:last-child) {
         @content;
     }
+}
 
+@mixin static-width($width) {
+    min-width: $width;
+    width: $width;
+}
+
+@mixin static-size($size) {
+    @include static-width($size);
+    height: $size;
 }

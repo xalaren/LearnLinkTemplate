@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Link</title>
+
+    <link rel="stylesheet" href="/src/styles/css/index.css">
+    <script type="text/javascript" src="../js/index.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container container">
+                <div class="header__logo logo-pic" onclick="redirect()">
+                    <img src="../assets/img/learnlinklogo.svg" alt="Logo" class="logo-pic__img">
+                    <h1 class="logo-pic__title">Learn Link</h1>
+                </div>
+                <nav class="header__nav">
+                    <!-- <div class="header__buttons">
+                        <button class="button-white-tp">Войти</button>
+                        <button class="button-white-tp">Регистрация</button>
+                    </div> -->
+                    <div class="header__dropdown dropdown">
+                        <div class="dropdown__head">
+                            <img class="dropdown__profile-image" src="../assets/img/profile_placeholder.svg"
+                                alt="Профиль">
+                            <p class="dropdown__profile-name">valorex</p>
+                            <p class="icon icon-arrow-down"></p>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main participants-page common-page-wrapper container">
+            <h3>Участники курса</h3>
+
+            <form action="#" class="participants-page__search-form search-form">
+                <input type="text" class="search-form__input" placeholder="Найти по имени, фамилии или никнейму">
+                <button class="search-form__button button-violet icon-search"></button>
+            </form>
+
+            <form action="#" class="participants-page__pagination-form pagination-form">
+                <button class="pagination-form__button button-violet-light icon-arrow-left-dotted"></button>
+                <button class="pagination-form__button button-violet-light button-violet-light-selected ">1</button>
+                <button class="pagination-form__button button-violet-light">2</button>
+                <button class="pagination-form__button button-violet-light">3</button>
+                <button class="pagination-form__button button-violet-light">...</button>
+                <button class="pagination-form__button button-violet-light icon-arrow-right-dotted"></button>
+            </form>
+
+            <section class="participants-page__user-list control-list">
+
+                <nav class="control-list__controls">
+                    <button class="control-list__add-button button-gray icon-plus"></button>
+                </nav>
+
+                <div class="control-list__list-item user-item">
+                    <div class="user-item__profile">
+                        <img class="user-item__image" src="../assets/img/profile_placeholder.svg" alt="Профиль">
+                        <div class="user-item__info profile-card">
+                            <p class="profile-card__title">Name Lastname</p>
+                            <p class="profile-card__subtitle text-violet">@valorex</p>
+                            <p class="profile-card__subtitle">Роль: <span class="text-violet">подписчик</span></p>
+                        </div>
+                    </div>
+                    <div class="user-item__properties">
+                        <button class="user-item__button button-round-violet icon-pen icon-medium-size"></button>
+                        <button class="user-item__button button-round-violet icon-cross icon-medium-size"></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class=" footer">
+            <div class="footer__content container">
+                <p class="footer__title">
+                    Learn Link
+                </p>
+                <p class="footer__text">
+                    Платформа для разработки и публикации образовательных курсов <br />
+                    ©2023-2024
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        select(0);
+
+        function select(index) {
+            const selectionItems = document.querySelectorAll('.selection-item');
+            selectionItems.forEach(item => item.classList.remove('selection-item-selected'));
+            selectionItems[index].classList.add('selection-item-selected');
+        }
+    </script>
+</body>
+
+</html>
