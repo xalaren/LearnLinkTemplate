@@ -1,4 +1,5 @@
-@import "variables.scss";
+@import "_variables.scss";
+@import "_mixins.scss";
 
 //Built-in styles
 
@@ -67,7 +68,13 @@ h3 {
     height: 50px;
     background-color: $white;
     font-weight: 500;
-    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.button-round {
+    @extend .button-base;
+    border-radius: 100px;
 }
 
 .button-white-tp {
@@ -99,12 +106,7 @@ h3 {
 
     transition: .4s ease-in-out;
 
-    &:hover {
-        background-color: $mainViolet;
-        outline: solid 4px rgba($lightViolet, 0.4);
-    }
-
-    &:focus {
+    @include hover-focus {
         background-color: $mainViolet;
         outline: solid 4px rgba($lightViolet, 0.4);
     }
@@ -114,6 +116,7 @@ h3 {
     @extend .button-base;
     background-color: $veryLightViolet;
     color: $lightViolet;
+    outline: solid 4px transparent;
 
     transition: .4s ease-in-out;
 
@@ -123,8 +126,10 @@ h3 {
         box-shadow: 0px 0px 20px 0px rgba($lightViolet, 0.5);
     }
 
-    &:hover {
-        @extend .button-violet-light-selected;
+    @include hover {
+        background-color: $lightViolet;
+        color: $white;
+        outline: solid 4px rgba($lightViolet, 0.4);
     }
 }
 
@@ -137,7 +142,7 @@ h3 {
     transition: .4s ease-in-out;
 
 
-    &:hover {
+    @include hover-focus {
         background-color: $lightViolet;
         color: $white;
     }
@@ -152,12 +157,7 @@ h3 {
 
     transition: .4s ease-in-out;
 
-    &:hover {
-        background-color: $red;
-        outline: solid 4px rgba($lightRed, 0.4);
-    }
-
-    &:focus {
+    @include hover {
         background-color: $red;
         outline: solid 4px rgba($lightRed, 0.4);
     }
@@ -167,16 +167,13 @@ h3 {
     @extend .button-base;
     background-color: $veryLightGray;
     color: $mainGray;
-    outline: solid 4px transparent;
+    border: solid 2px transparent;
 
     transition: .4s ease-in-out;
 
-    &:hover {
-        background-color: $lightGray;
-    }
-
-    &:focus {
-        background-color: $lightGray;
+    @include hover-focus {
+        background-color: $white;
+        border: solid 2px $lightGray;
     }
 }
 
@@ -187,13 +184,7 @@ h3 {
 
     transition: .4s ease-in-out;
 
-    &:hover {
-        color: $white;
-        background-color: $red;
-        outline: solid 4px rgba($lightRed, 0.4);
-    }
-
-    &:focus {
+    @include hover-focus {
         color: $white;
         background-color: $red;
         outline: solid 4px rgba($lightRed, 0.4);
@@ -207,36 +198,26 @@ h3 {
 
     transition: .4s ease-in-out;
 
-    &:hover {
-        color: $white;
-        background-color: $green;
-        outline: solid 4px rgba($lightGreen, 0.4);
-    }
-
-    &:focus {
+    @include hover-focus {
         color: $white;
         background-color: $green;
         outline: solid 4px rgba($lightGreen, 0.4);
     }
 }
 
-.button-round-violet {
-    $width: 40px;
-    min-width: $width;
-    min-height: $width;
-    width: $width;
-    height: $width;
-    background-color: $veryLightViolet;
-    border-radius: 20px;
-    color: $lightViolet;
+.button-violet-light-rounded {
+    @extend .button-violet-light;
+    @extend .button-round;
+}
 
-    transition: .4s ease-in-out;
+.button-violet-rounded {
+    @extend .button-violet;
+    @extend .button-round;
+}
 
-
-    &:hover {
-        background-color: $lightViolet;
-        color: $white;
-    }
+.button-violet-outline-rounded {
+    @extend.button-violet-outline;
+    @extend.button-round;
 }
 
 .inputs-base {
@@ -300,6 +281,11 @@ h3 {
 
 }
 
+.ui-title {
+    font-size: $h3-fz;
+    font-weight: 500;
+}
+
 .ui-text {
     color: $mainGray;
     line-height: 1.5;
@@ -327,7 +313,7 @@ h3 {
     color: $mainViolet;
     cursor: pointer;
 
-    &:hover {
+    @include hover {
         text-decoration: underline;
     }
 }

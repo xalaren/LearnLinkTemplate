@@ -1,9 +1,9 @@
-    @import "reset.scss";
-    @import "fontimports.scss";
-    @import "icons.scss";
-    @import "variables.scss";
-    @import "helpers.scss";
-    @import "mixins.scss";
+    @import "./partials/_reset.scss";
+    @import "./partials/_fontimports.scss";
+    @import "./partials/_icons.scss";
+    @import "./partials/_variables.scss";
+    @import "./partials/_helpers.scss";
+    @import "./partials/_mixins.scss";
 
 
     //General styles
@@ -53,7 +53,7 @@
                 color: $white;
             }
 
-            &:hover {
+            @include hover-focus {
                 background: rgba($white, 0.2);
             }
         }
@@ -163,9 +163,10 @@
                 font-size: calc(1em + 4px);
             }
 
-            &:hover {
+            @include hover {
                 background: $veryLightGray;
             }
+
 
             @media screen and (max-width: $sm) {
                 padding: 16px 24px;
@@ -182,7 +183,7 @@
         background-color: $veryLightGray;
         transition: .3s ease-in-out;
 
-        &:hover {
+        @include hover-focus {
             background-color: $lightGray;
         }
 
@@ -354,10 +355,7 @@
             transition: inherit;
         }
 
-        &:hover {
-            // border: solid 2px $lightViolet;
-            // background-color: $veryLightViolet;
-
+        @include hover {
             .course-item__title {
                 color: $lightViolet;
             }
@@ -586,8 +584,10 @@
                 box-shadow: 0px 0px 20px 0px rgba($lightViolet, 0.5);
             }
 
-            &:hover:not(&-selected) {
-                color: $lightViolet;
+            &:not(&-selected) {
+                @include hover {
+                    color: $lightViolet;
+                }
             }
         }
 
@@ -595,11 +595,9 @@
             width: 100%;
         }
 
-        >*:not(:last-child) {
+        @include child-not-last {
             margin-bottom: 20px;
         }
-
-        @media screen and (max-width: $sm) {}
     }
 
     .profile-card {
@@ -612,7 +610,7 @@
             font-size: $reg-fz;
         }
 
-        >*:not(:last-child) {
+        @include child-not-last {
             margin-bottom: 10px;
         }
     }
@@ -639,7 +637,7 @@
         border-bottom: solid 3px transparent;
         transition: .3s ease-in-out;
 
-        &:hover {
+        @include hover {
             color: $lightViolet;
         }
 
@@ -650,7 +648,7 @@
         }
 
         @media screen and (max-width: $xs) {
-            &-active {
+            &-selected {
                 border-bottom: none;
             }
         }
@@ -658,7 +656,6 @@
 
 
     .course-page {
-
         &__header {
             display: flex;
             justify-content: space-between;
@@ -690,7 +687,6 @@
     }
 
     .content-list {
-
         &__head {
             display: flex;
             justify-content: space-between;
@@ -748,7 +744,7 @@
             color: inherit;
         }
 
-        &:hover {
+        @include hover {
             background-color: $veryLightViolet;
         }
     }
@@ -856,19 +852,13 @@
             }
         }
 
-        &:hover:not(&-checked) {
-            outline: 3px solid rgba($lightViolet, 0.2);
+        &:not(&-checked) {
+            @include hover-focus {
+                outline: 3px solid rgba($lightViolet, 0.2);
 
-            >* {
-                color: $lightViolet;
-            }
-        }
-
-        &:focus:not(&-checked) {
-            outline: 3px solid rgba($lightViolet, 0.2);
-
-            >* {
-                color: $lightViolet;
+                >* {
+                    color: $lightViolet;
+                }
             }
         }
     }
@@ -895,6 +885,89 @@
             display: flex;
             gap: 10px;
         }
+
+        &__button {
+            padding: 0;
+            @include static-size(40px);
+        }
+
+        @media screen and (max-width: $xs) {
+            flex-direction: column;
+            padding: 20px;
+            gap: 40px;
+
+            &__profile {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    }
+
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        padding: 20px;
+
+        &__content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 40px;
+            max-width: 600px;
+            padding: 40px;
+            z-index: 10;
+            border-radius: 10px;
+            background-color: $white;
+        }
+
+        &__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__close-button {
+            background-color: $veryLightGray;
+            transition: .4s ease-in-out;
+
+            @include static-size(40px);
+            @extend .button-round;
+
+            @include hover {
+                background-color: $lightRed;
+                color: $white;
+            }
+        }
+
+        &__footer {
+            display: flex;
+            gap: 20px;
+        }
+
+        &__bottom-button {
+            width: 100%;
+        }
+
+        @media screen and (max-width: $xs) {
+            padding: 0;
+
+            &__content {
+                border-radius: 0;
+                padding: 20px;
+                max-width: none;
+                @include static-size(100%);
+            }
+        }
+
     }
 
     //Footer styles
@@ -902,6 +975,7 @@
     .footer {
         width: 100%;
         min-height: 160px;
+        height: 100%;
         background-color: $darkViolet;
         padding: 20px;
 
