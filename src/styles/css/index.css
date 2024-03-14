@@ -1763,6 +1763,9 @@ h3 {
     color: #8C74FF;
   }
 }
+.content-creator__section-input {
+  min-width: 200px;
+}
 @media screen and (max-width: 576px) {
   .content-creator__actions {
     gap: 20px;

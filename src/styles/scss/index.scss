@@ -1032,6 +1032,10 @@
             }
         }
 
+        &__section-input {
+            min-width: 200px;
+        }
+
         @media screen and (max-width: $sm) {
 
             &__actions {
