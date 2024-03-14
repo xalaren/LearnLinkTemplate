@@ -1440,7 +1440,7 @@ h3 {
 }
 @media screen and (max-width: 440px) {
   .selection-item-selected {
-    border-bottom: none;
+    border-color: transparent;
   }
 }
 
@@ -1501,6 +1501,7 @@ h3 {
   height: 50px;
   padding: 20px;
   display: flex;
+  gap: 10px;
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
@@ -1517,6 +1518,11 @@ h3 {
 }
 .item-link__properties {
   font-weight: 500;
+}
+@media screen and (max-width: 576px) {
+  .item-link {
+    padding: 10px;
+  }
 }
 
 .link-light-violet {
@@ -1806,7 +1812,7 @@ h3 {
 .lesson-section > *:not(:last-child) {
   margin-bottom: 40px;
 }
-.lesson-section__files {
+.files-list {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -1843,6 +1849,21 @@ h3 {
 .code-block .textarea {
   width: 100%;
   min-height: 400px !important;
+}
+
+.response-list > *:not(:last-child) {
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+  .response-list__list-item {
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+@media screen and (max-width: 440px) {
+  .response-list .user-item__properties {
+    flex-direction: column;
+  }
 }
 
 .footer {

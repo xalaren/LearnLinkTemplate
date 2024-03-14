@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Link</title>
+
+    <link rel="stylesheet" href="/src/styles/css/index.css" />
+    <script type="text/javascript" src="../js/index.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container container">
+                <div class="header__logo logo-pic" onclick="redirect()">
+                    <img src="../assets/img/learnlinklogo.svg" alt="Logo" class="logo-pic__img" />
+                    <h1 class="logo-pic__title">Learn Link</h1>
+                </div>
+                <nav class="header__nav">
+                    <div class="header__dropdown dropdown">
+                        <div class="dropdown__head">
+                            <img class="dropdown__profile-image" src="../assets/img/profile_placeholder.svg"
+                                alt="Профиль" />
+                            <p class="dropdown__profile-name">valorex</p>
+                            <p class="icon icon-arrow-down"></p>
+                        </div>
+                        <div class="dropdown__items">
+                            <div class="dropdown__item" onclick="redirect('account')">
+                                <span class="icon icon-user"></span> Профиль
+                            </div>
+                            <div class="dropdown__item">
+                                <span class="icon icon-star" onclick="redirect('user-courses')"></span>
+                                Мои курсы
+                            </div>
+                            <div class="dropdown__item">
+                                <span class="icon icon-power" onclick="redirect()"></span>
+                                Выйти
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main common-page-wrapper view-page container">
+            <section class="view-page__header">
+                <p class="view-page__title big-text">Задание 1</p>
+
+                <div class="view-page__dropdown dropdown">
+                    <div class="dropdown__head">
+                        <button class="ellipsis-button icon-ellipsis"></button>
+                    </div>
+                    <div class="dropdown__items">
+                        <div class="dropdown__item">
+                            <span class="icon icon-pen-circle"></span> Редактировать
+                        </div>
+                        <div class="dropdown__item">
+                            <span class="icon icon-cross-circle"></span> Удалить
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <p class="view-page__description ui-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed tempus
+                urna et pharetra pharetra. Sit amet massa vitae tortor condimentum.
+            </p>
+
+            <section class="view-page__files-list files-list">
+                <button class="button-gray-violet">
+                    <i class="icon-file icon-medium-size"></i> file.txt
+                </button>
+                <button class="button-gray-violet">
+                    <i class="icon-file icon-medium-size"></i> file.txt
+                </button>
+                <button class="button-gray-violet">
+                    <i class="icon-file icon-medium-size"></i> file.txt
+                </button>
+            </section>
+
+            <section class="view-page__responses response-list">
+                <h3>Ответы участников</h3>
+
+                <form action="#" class="view-page__pagination-form pagination-form">
+                    <button class="pagination-form__button button-violet-light icon-arrow-left-dotted"></button>
+                    <button class="pagination-form__button button-violet-light button-violet-light-selected ">1</button>
+                    <button class="pagination-form__button button-violet-light">2</button>
+                    <button class="pagination-form__button button-violet-light">3</button>
+                    <button class="pagination-form__button button-violet-light">...</button>
+                    <button class="pagination-form__button button-violet-light icon-arrow-right-dotted"></button>
+                </form>
+
+                <div class="response-list__list-item user-item">
+                    <div class="user-item__profile">
+                        <img class="user-item__image" src="../assets/img/profile_placeholder.svg" alt="Профиль">
+                        <div class="user-item__info profile-card">
+                            <p class="profile-card__title">Name Lastname</p>
+                            <p class="profile-card__subtitle">Оценка: <span class="text-violet">5,00 / 5,00</span></p>
+                        </div>
+                    </div>
+                    <div class="user-item__properties">
+                        <button class="button-gray-violet"><i class="icon-arrow-right icon-medium-size"></i>
+                            Просмотреть</button>
+                        <button class="button-gray-violet"><i class="icon-star icon-medium-size"></i> Оценить</button>
+                    </div>
+                </div>
+
+                <div class="response-list__list-item user-item">
+                    <div class="user-item__profile">
+                        <img class="user-item__image" src="../assets/img/profile_placeholder.svg" alt="Профиль">
+                        <div class="user-item__info profile-card">
+                            <p class="profile-card__title">Name Lastname</p>
+                            <p class="profile-card__subtitle">Оценка: <span class="text-violet">нет оценки</span></p>
+                        </div>
+                    </div>
+                    <div class="user-item__properties">
+                        <button class="button-gray-violet"><i class="icon-arrow-right icon-medium-size"></i>
+                            Просмотреть</button>
+                        <button class="button-gray-violet"><i class="icon-star icon-medium-size"></i> Оценить</button>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__content container">
+                <p class="footer__title">Learn Link</p>
+                <p class="footer__text">
+                    Платформа для разработки и публикации образовательных курсов <br />
+                    ©2023-2024
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
