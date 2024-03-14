@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Link</title>
+
+    <link rel="stylesheet" href="/src/styles/css/index.css">
+    <script type="text/javascript" src="../js/index.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container container">
+                <div class="header__logo logo-pic" onclick="redirect()">
+                    <img src="../assets/img/learnlinklogo.svg" alt="Logo" class="logo-pic__img">
+                    <h1 class="logo-pic__title">Learn Link</h1>
+                </div>
+                <nav class="header__nav">
+                    <!-- <div class="header__buttons">
+                        <button class="button-white-tp">Войти</button>
+                        <button class="button-white-tp">Регистрация</button>
+                    </div> -->
+                    <div class="header__dropdown dropdown">
+                        <div class="dropdown__head">
+                            <img class="dropdown__profile-image" src="../assets/img/profile_placeholder.svg"
+                                alt="Профиль">
+                            <p class="dropdown__profile-name">valorex</p>
+                            <p class="icon icon-arrow-down"></p>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main common-page-wrapper container">
+            <div class="lesson-creator">
+                <form action="#" class="lesson-creator__form">
+                    <div class="form-input">
+                        <input type="text" class="form-input__input outlined-input-line big-text"
+                            placeholder="Введите название урока...">
+                    </div>
+                    <div class="form-input">
+                        <textarea class="form-input__input textarea outlined-input"
+                            placeholder="Введите описание урока (необязательно)..."></textarea>
+                    </div>
+                </form>
+
+                <section class="lesson-creator__content content-creator">
+                    <nav class="content-creator__controls">
+                        <p>Содержимое</p>
+                        <button class="content-creator__add-button button-gray icon-plus icon-medium-size"></button>
+                    </nav>
+
+                    <div class="content-creator__actions">
+                        <button class="content-creator__large-button icon-text-add">
+                        </button>
+                        <button class="content-creator__large-button icon-document-add">
+                        </button>
+                        <button class="content-creator__large-button icon-code-add">
+                        </button>
+                    </div>
+                </section>
+                <section class="lesson-creator__bottom">
+                    <button class="button-violet-outline">Сохранить</button>
+                    <button class="button-violet-outline">Отменить</button>
+                </section>
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer__content container">
+                <p class="footer__title">
+                    Learn Link
+                </p>
+                <p class="footer__text">
+                    Платформа для разработки и публикации образовательных курсов <br />
+                    ©2023-2024
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

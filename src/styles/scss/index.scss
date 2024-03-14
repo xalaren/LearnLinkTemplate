@@ -356,6 +356,8 @@
         }
 
         @include hover {
+            border: solid 2px $lightViolet;
+
             .course-item__title {
                 color: $lightViolet;
             }
@@ -425,6 +427,10 @@
     .form-input {
         >*:not(:last-child) {
             margin-bottom: 20px;
+        }
+
+        &__input {
+            width: 100%;
         }
 
         &__error {
@@ -922,7 +928,7 @@
             flex-direction: column;
             justify-content: space-between;
             gap: 40px;
-            max-width: 600px;
+            width: 600px;
             padding: 40px;
             z-index: 10;
             border-radius: 10px;
@@ -970,11 +976,74 @@
 
     }
 
+
+    .lesson-creator {
+        max-width: 800px;
+        width: 100%;
+
+        @include child-not-last {
+            margin-bottom: 60px;
+        }
+
+        &__form {
+            @include child-not-last {
+                margin-bottom: 40px;
+            }
+        }
+
+        &__bottom {
+            display: flex;
+            gap: 40px;
+        }
+    }
+
+    .content-creator {
+        @include child-not-last {
+            margin-bottom: 40px;
+        }
+
+        &__controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+
+        }
+
+        &__actions {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        &__large-button {
+            @extend .button-base;
+            @include static-size(100px);
+            padding: 5px;
+            font-size: $h1-fz;
+            background-color: $veryLightGray;
+            border: solid 2px transparent;
+            transition: .3s ease-in-out;
+
+            @include hover {
+                border-color: $lightViolet;
+                background-color: $veryLightViolet;
+                color: $lightViolet;
+            }
+        }
+
+        @media screen and (max-width: $sm) {
+
+            &__actions {
+                gap: 20px;
+            }
+        }
+    }
+
     //Footer styles
 
     .footer {
         width: 100%;
-        min-height: 160px;
         height: 100%;
         background-color: $darkViolet;
         padding: 20px;

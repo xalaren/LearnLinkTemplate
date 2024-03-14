@@ -8,6 +8,20 @@
     color: $mainGray;
 }
 
+.container {
+    box-sizing: border-box;
+    padding: 0 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    $footerHeight: 160px;
+    display: grid;
+    grid-template-rows: auto 1fr $footerHeight;
+    min-height: calc(100dvh + $footerHeight);
+}
+
 body {
     background-color: $white;
 }
@@ -33,6 +47,12 @@ textarea {
     font-size: $reg-fz;
 }
 
+.textarea {
+    resize: none;
+    min-height: 250px !important;
+    color: $mainGray;
+}
+
 h1 {
     font-size: $h1-fz;
     font-weight: 700;
@@ -49,19 +69,6 @@ h3 {
 }
 
 //Common style classes
-
-.container {
-    box-sizing: border-box;
-    padding: 0 20px;
-    max-width: 1280px;
-    margin: 0 auto;
-}
-
-.wrapper {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    height: calc(100% + 150px);
-}
 
 .button-base {
     border-radius: 5px;
@@ -281,6 +288,54 @@ h3 {
 
 }
 
+.outlined-input {
+    @extend .inputs-base;
+    background-color: $white;
+    border: solid 2px $veryLightGray;
+    transition: .3s ease-in-out;
+
+    &::placeholder {
+        transition: .3s ease-in-out;
+    }
+
+
+    &:focus {
+        border: solid 2px $lightViolet;
+        color: $lightViolet;
+
+        &::placeholder {
+            color: rgba($lightViolet, 0.6);
+        }
+    }
+}
+
+.outlined-input-line {
+    @extend .inputs-base;
+    background-color: transparent;
+    border-bottom: solid 2px $veryLightGray;
+    border-radius: 0;
+    transition: .3s ease-in-out;
+
+    &::placeholder {
+        transition: .3s ease-in-out;
+    }
+
+    @include hover {
+        background-color: rgba($veryLightGray, 0.7);
+    }
+
+
+    &:focus {
+        background-color: $veryLightViolet;
+        color: $lightViolet;
+        border-bottom-color: $lightViolet;
+
+        &::placeholder {
+            color: rgba($lightViolet, 0.5);
+        }
+    }
+}
+
 .ui-title {
     font-size: $h3-fz;
     font-weight: 500;
@@ -297,6 +352,12 @@ h3 {
     @extend .ui-text;
     font-size: $big-fz;
     font-weight: 500;
+}
+
+.big-text-regular {
+    @extend .ui-text;
+    font-size: $big-fz;
+    font-weight: 400;
 }
 
 .text-danger {
@@ -324,6 +385,10 @@ h3 {
     &:before {
         content: '* '
     }
+}
+
+.icon-large-size {
+    font-size: 40px;
 }
 
 .icon-medium-size {
