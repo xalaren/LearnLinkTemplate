@@ -1,42 +1,44 @@
 @mixin child-not-last {
-    >*:not(:last-child) {
-        @content;
-    }
+  > *:not(:last-child) {
+    @content;
+  }
 }
 
 @mixin static-width($width) {
-    min-width: $width;
-    width: $width;
+  min-width: $width;
+  width: $width;
 }
 
 @mixin static-size($size) {
-    @include static-width($size);
-    height: $size;
+  @include static-width($size);
+  height: $size;
+}
+
+@mixin static-height($height) {
+  min-height: $height;
+  height: $height;
 }
 
 @mixin hover {
-
-    @media (hover: hover) {
-        &:hover {
-            @content;
-        }
+  @media (hover: hover) {
+    &:hover {
+      @content;
     }
+  }
 
-
-    @media (hover: none) {
-        &:active {
-            @content;
-        }
+  @media (hover: none) {
+    &:active {
+      @content;
     }
-
+  }
 }
 
 @mixin hover-focus {
-    &:focus {
-        @content;
-    }
+  &:focus {
+    @content;
+  }
 
-    @include hover {
-        @content;
-    }
+  @include hover {
+    @content;
+  }
 }

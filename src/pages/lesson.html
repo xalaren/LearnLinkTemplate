@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Link</title>
+
+    <link rel="stylesheet" href="/src/styles/css/index.css" />
+    <script type="text/javascript" src="../js/index.js" defer></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header__container container">
+                <div class="header__logo logo-pic" onclick="redirect()">
+                    <img src="../assets/img/learnlinklogo.svg" alt="Logo" class="logo-pic__img" />
+                    <h1 class="logo-pic__title">Learn Link</h1>
+                </div>
+                <nav class="header__nav">
+                    <div class="header__dropdown dropdown">
+                        <div class="dropdown__head">
+                            <img class="dropdown__profile-image" src="../assets/img/profile_placeholder.svg"
+                                alt="Профиль" />
+                            <p class="dropdown__profile-name">valorex</p>
+                            <p class="icon icon-arrow-down"></p>
+                        </div>
+                        <div class="dropdown__items">
+                            <div class="dropdown__item" onclick="redirect('account')">
+                                <span class="icon icon-user"></span> Профиль
+                            </div>
+                            <div class="dropdown__item">
+                                <span class="icon icon-star" onclick="redirect('user-courses')"></span>
+                                Мои курсы
+                            </div>
+                            <div class="dropdown__item">
+                                <span class="icon icon-power" onclick="redirect()"></span>
+                                Выйти
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="main common-page-wrapper view-page container">
+            <section class="view-page__header">
+                <p class="view-page__title big-text">Урок 1</p>
+
+                <div class="view-page__dropdown dropdown">
+                    <div class="dropdown__head">
+                        <button class="ellipsis-button icon-ellipsis"></button>
+                    </div>
+                    <div class="dropdown__items">
+                        <div class="dropdown__item">
+                            <span class="icon icon-pen-circle"></span> Редактировать
+                        </div>
+                        <div class="dropdown__item">
+                            <span class="icon icon-cross-circle"></span> Удалить
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <p class="view-page__description ui-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed tempus
+                urna et pharetra pharetra. Sit amet massa vitae tortor condimentum.
+            </p>
+
+            <button class="button-gray-violet">
+                <i class="icon-chat icon-medium-size"></i>Открыть чат
+            </button>
+
+            <section class="view-page__section lesson-section">
+                <h3 class="lesson-section__title">Раздел 1</h3>
+                <p class="lesson-section__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Velit
+                    aliquet sagittis id consectetur. Eget mauris pharetra et ultrices
+                    neque ornare. Eget gravida cum sociis natoque penatibus et. Rutrum
+                    tellus pellentesque eu tincidunt tortor aliquam nulla. Leo vel
+                    fringilla est ullamcorper eget nulla facilisi. Nulla pellentesque
+                    dignissim enim sit amet venenatis urna. Semper eget duis at tellus.
+                    Tristique senectus et netus et malesuada fames ac. Cras adipiscing
+                    enim eu turpis egestas pretium aenean. Lorem sed risus ultricies
+                    tristique nulla aliquet. Donec massa sapien faucibus et molestie ac.
+                    Nascetur ridiculus mus mauris vitae ultricies leo integer. Egestas
+                    dui id ornare arcu odio ut sem. Purus ut faucibus pulvinar elementum
+                    integer enim. Tempor commodo ullamcorper a lacus vestibulum sed.
+                    Volutpat consequat mauris nunc congue nisi vitae suscipit tellus
+                    mauris.
+                </p>
+            </section>
+
+            <section class="view-page__section lesson-section">
+                <h3 class="lesson-section__title">Раздел 2</h3>
+                <div class="lesson-section__files">
+                    <button class="button-gray-violet">
+                        <i class="icon-file icon-medium-size"></i> file.txt
+                    </button>
+                    <button class="button-gray-violet">
+                        <i class="icon-file icon-medium-size"></i> file.txt
+                    </button>
+                    <button class="button-gray-violet">
+                        <i class="icon-file icon-medium-size"></i> file.txt
+                    </button>
+                </div>
+            </section>
+
+            <section class="view-page__section lesson-section">
+                <h3 class="lesson-section__title">Раздел 3</h3>
+                <div class="lesson-section__code code-block">
+                    <div class="code-block__title">Код: Program.cs</div>
+                    <!-- unformat-->
+                    <div class="code-block__text"></div>
+                    <!-- unformat -->
+                </div>
+
+                <div class="lesson-section__code code-block">
+                    <div class="code-block__title">
+                        Код:
+
+                        <input type="text" class="input-line" value="Program.cs" />
+                    </div>
+                    <!-- prettier-ignore -->
+                    <textarea class="code-block__text textarea">
+class Program 
+{
+    static void Main(string[] args) {
+        Console.WriteLine("Hello world");
+    }
+}
+            </textarea>
+                    <!-- prettier-ignore-end -->
+                </div>
+            </section>
+
+            <section class="view-page__content">
+                <div class="content-list">
+                    <div class="content-list__head">
+                        <h3>Задания</h3>
+                        <button class="content-list__add-button button-gray icon-plus icon-medium-size"></button>
+                    </div>
+                    <div class="content-list__items">
+
+                        <div class="content-list__item">
+                            <div class="item-link link-light-violet">
+                                <div class="item-link">
+                                    <div class="item-link__info">
+                                        <span class="icon-bolt icon-medium-size"></span>
+                                        Задание 1
+                                    </div>
+                                    <div class="item-link__properties">5,00 / 5,00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-list__item">
+                            <div class="item-link link-light-violet">
+                                <div class="item-link">
+                                    <div class="item-link__info">
+                                        <span class="icon-bolt icon-medium-size"></span>
+                                        Задание 2
+                                    </div>
+                                    <div class="item-link__properties"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__content container">
+                <p class="footer__title">Learn Link</p>
+                <p class="footer__text">
+                    Платформа для разработки и публикации образовательных курсов <br />
+                    ©2023-2024
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

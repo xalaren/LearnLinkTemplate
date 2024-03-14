@@ -77,6 +77,14 @@ h3 {
     font-weight: 500;
     padding-left: 10px;
     padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    >* {
+        transition: inherit;
+    }
 }
 
 .button-round {
@@ -113,7 +121,7 @@ h3 {
 
     transition: .4s ease-in-out;
 
-    @include hover-focus {
+    @include hover {
         background-color: $mainViolet;
         outline: solid 4px rgba($lightViolet, 0.4);
     }
@@ -149,7 +157,7 @@ h3 {
     transition: .4s ease-in-out;
 
 
-    @include hover-focus {
+    @include hover {
         background-color: $lightViolet;
         color: $white;
     }
@@ -178,9 +186,26 @@ h3 {
 
     transition: .4s ease-in-out;
 
-    @include hover-focus {
+    @include hover {
         background-color: $white;
         border: solid 2px $lightGray;
+    }
+}
+
+.button-gray-violet {
+    @extend .button-base;
+    background-color: $veryLightGray;
+    border: solid 2px transparent;
+    transition: .3s ease-in-out;
+
+    @include hover {
+        border-color: $lightViolet;
+        background-color: $veryLightViolet;
+        color: $lightViolet;
+
+        >* {
+            color: $lightViolet;
+        }
     }
 }
 
